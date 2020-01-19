@@ -1,0 +1,88 @@
+section.values
+  //- .triangles
+  //-   svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+  //-     polygon(points="0,0 0,100 1000,100")
+  //-   svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+  //-     polygon(points="1000,0 1000,100 0,100")
+  .container.values__contaiener
+    .values__title
+      .values__title-text.title Чем я могу быть полезен вам
+      .values__title-subtext.text
+        p
+          | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+          |  Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+    .values__content
+      -
+        var items = [
+          ["Frontend", ["HTML5", "CSS3", "Javascript", "Vue.js"]],
+          ["Workflow", ["GIT", "Terminal", "Gulp", "Webpack"]]
+        ];
+
+      ul.skills-graphic
+        each row in items
+          li.skills-graphic__item
+            .skills-row
+              .skills-row__title.title.title--font #{row[0]}
+              .skills-row__content 
+                ul.skills
+                  each skill in row[1]
+                    li.skills__item
+                      .skill 
+                        svg.skill__circle(width="150" height="150")
+                          circle.circle(
+                            stroke="#e9e9e9", 
+                            stroke-width="10"
+                            cx="75"
+                            cy="75"
+                            r="65"
+                            fill="transparent"
+                            )
+                          circle.circle__round(
+                          stroke="url(#gradient)", 
+                          stroke-width="20"
+                          cx="75"
+                          cy="75"
+                          r="65"
+                          fill="transparent"
+                          style="transform-origin: center; transform: rotate(-180deg);"
+                          )
+                          linearGradient#gradient
+                            stop(offset="0%" stop-color="#9300e8")
+                            stop(offset="100%" stop-color="#4a00ed")                           
+                        .skill__title.subtitle #{skill}
+
+
+
+  //- .skills
+  //-   .skills__desc
+  //-     .skills__title.title Чем я могу быть полезен вам
+  //-     .skills__text.text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+  //-   .skills__items
+  //-     .skills__title.title.title--font  Front-end
+  //-     ul.skills__list.subtitle--color
+  //-       li.skills__item
+  //-         .skills__subtitle.skills__subtitle--position.subtitle HTML5
+  //-         +icon('circle-gray', 'circle-gray')
+  //-       li.skills__item
+  //-         .skills__subtitle.skills__subtitle--position.subtitle CSS3
+  //-         +icon('circle-gray', 'circle-gray')
+  //-       li.skills__item
+  //-         .skills__subtitle.skills__subtitle--position.subtitle Javascript
+  //-         +icon('circle-gray', 'circle-gray')
+  //-       li.skills__item
+  //-         .skills__subtitle.skills__subtitle--position.subtitle  Vue.js
+  //-         +icon('circle-gray', 'circle-gray')
+  //-     .skills__title.title.title--font Workflow
+  //-     ul.skills__list.subtitle--color
+  //-       li.skills__item
+  //-         .skills__subtitle.skills__subtitle--position.subtitle GIT
+  //-         +icon('circle-gray', 'circle-gray')
+  //-       li.skills__item
+  //-         .skills__subtitle.skills__subtitle--position.subtitle Terminal
+  //-         +icon('circle-gray', 'circle-gray')
+  //-       li.skills__item
+  //-         .skills__subtitle.skills__subtitle--position.subtitle Gulp
+  //-         +icon('circle-gray', 'circle-gray')
+  //-       li.skills__item
+  //-         .skills__subtitle.skills__subtitle--position.subtitle  Webpack
+  //-         +icon('circle-gray', 'circle-gray')

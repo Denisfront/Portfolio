@@ -1,0 +1,41 @@
+include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Portfolio | main page
+  body
+    .wrapper
+      .welcome-sections
+        .parallax
+          +image('background/mountain.jpg', 'parallax__img', 'фон секции')
+        include ./pages/sections/hero
+        include ./pages/sections/user
+      .maincontent
+        include ./pages/sections/values
+        include ./pages/sections/mywork
+        include ./pages/sections/reviews
+        include ./pages/sections/section-form
+      //- footer.footer
+      //-   .container.footer__container
+      //-     .footer__left
+      //-       .footer__date © 2020
+      //-       .user-promo.user-promo--footer
+      //-         h1.title.user-promo__title Санников
+      //-           span Денис
+      //-         h3.subtitle.user-promo__subtitle Личный сайт 
+      //-           span веб разработчика
+      //-     .footer__right
+      //-       +nav('nav', ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"], 0)
+              
+
+
+   
+
+
+              
+
+              
