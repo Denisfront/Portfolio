@@ -1,0 +1,23 @@
+
+section.hero
+  .hero__wrapper 
+    header.hero__header
+      .container.hero__container
+        .hero__logo
+          .logo СД
+        .hero__menu
+          +nav('menu', ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"], 0)
+        .hero__links
+          ul.socials
+            each social in ['insta', 'vk', 'github']
+              li.socials__item
+                a(class=`socials__link socials__link_${social}` href="#")
+                  +icon(`${social}`, `socials__icon`)
+    .hero__content
+      .user-info
+        .user-info__desc Личный сайт 
+          span frontend разработчика
+        .user-info__username Cанников
+          span Денис 
+    .hero__buttons
+      a.scroll-down Скролл
