@@ -1,5 +1,7 @@
 
-
+.menu--color .menu__list {
+    color: $white;
+}
 .menu__list {
     display: flex;
     color: $text-color;
@@ -14,6 +16,14 @@
 
     &:last-child {
         margin-right: 0;
+    }
+}
+
+.menu--color .menu__item--active {
+    color: $hover-color-orange;
+
+    &:after {
+        border-color: $hover-color-orange;
     }
 }
 .menu__item--active {

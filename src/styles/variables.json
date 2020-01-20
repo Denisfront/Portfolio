@@ -1,5 +1,8 @@
 {
   "white": "#fff",
+  "white-opacity": "rgba(#fff, .3);",
+  "white-opacity-footer-date": "rgba(#fff, .1);",
+  "white-opacity-footer-text": "rgba(#fff, 0.15);",
   "text-color": "#464d62",
   "text-color-opacity3": "rgba(#464d62, .3);",
   "text-color-opacity-form": "rgba(#464d62, 0.3);",
