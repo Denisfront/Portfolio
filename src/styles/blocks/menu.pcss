@@ -1,0 +1,49 @@
+
+.menu--color .menu__list {
+    color: $white;
+}
+.menu__list {
+    display: flex;
+    color: $text-color;
+}
+
+.menu__item {
+    margin-right: 61px;
+
+    &:hover {
+        font-weight: 600;
+     }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.menu--color .menu__item--active {
+    color: $hover-color-orange;
+
+    &:after {
+        border-color: $hover-color-orange;
+    }
+}
+.menu__item--active {
+    color: $hover-color-purple;
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+        content: "";
+        position: absolute;
+        border-bottom: 3px solid #5500f2;
+        bottom: -26px;
+        left: -30px;
+        right: 0;
+        top: 0;
+        margin: auto;
+        width: 129px;
+    }
+}
+.menu__link {
+    text-decoration: none;
+}
