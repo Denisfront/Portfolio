@@ -7,16 +7,16 @@ section.section-form
                     .form__row
                         label.form__block
                             .form__block-title Введите ваше имя
-                            input.form__input(type="text")
+                            input.form__input(type="text",placeholder="Ковальчук Дмитрий")
                             +icon('user', 'form__input-icon')
                         label.form__block
                             .form__block-title Введите ваш email
-                            input.form__input(type="email")
+                            input.form__input(type="email", placeholder="loftshcoll@study.com")
                             +icon('envelope', 'form__input-icon')
                     .form__row
-                        label.form__block
+                        label.form__block.form__block--textarea
                             .form__block-title Сообщение к письму
-                            textarea.form__input.form__input--textarea
+                            textarea.form__input.form__input--textarea(placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопросай")
                             +icon('message', 'form__input-icon')
                     input.btn.btn--form(type="submit", value="Отправить")
 

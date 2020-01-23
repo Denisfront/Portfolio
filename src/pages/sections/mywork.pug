@@ -18,8 +18,7 @@ section.mywork
                             ul.slider-preview
                                 each col in items
                                     li.slider-preview__item
-                                        a.slider-preview__link(href="#")
-                                            +image(`${col[0]}`, `${col[1]}`)
+                                        +image(`${col[0]}`, `${col[1]}`)
                         .slider__buttons
                             a.direction-btn.direction-btn--next
                                 +icon('arrow-down', 'arrow-down arrow-down--next')
