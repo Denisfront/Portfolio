@@ -3,7 +3,7 @@
     margin-bottom: 33px;
 
     &:last-of-type {
-        margin-bottom: 55px;
+        margin-bottom: 84px;
     }
 }
 
@@ -11,7 +11,7 @@
     margin-right: 90px;
     width: 100%;
     position: relative;
-    
+
     &:last-child {
         margin-right: 0;
     }
@@ -38,10 +38,11 @@
     font-weight: 700;
     color: $text-color;
     position: relative;
+    background-color: transparent;
 
     &:focus {
         border-color: $hover-color-purple;
-        }
+    }
 }
 
 .form__input-icon {
@@ -57,4 +58,17 @@
     line-height: 30px;
     resize: vertical;
     height: 81px;
+    border-bottom: none;
+}
+
+.form__block--textarea {
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        width: 100%;
+        border-bottom: 1px solid $text-color;
+    }
 }
