@@ -24,11 +24,11 @@ html(lang="ru")
           +image('parallax/mountain1.png', 'parallax__img', 'фон секции')
         .parallax__layer(data-speed="0.27")
           +image('parallax/white.png', 'parallax__img', 'фон секции')
-        include ./pages/sections/hero
-        include ./pages/sections/user
+        include ./templates/home
+        include ./templates/about
       .maincontent
-        include ./pages/sections/values
-        include ./pages/sections/mywork
+        include ./templates/skillslist
+        include ./templates/projects
         .parallax-budda
           .parallax-budda__layer(data-speedbudda="0.1")
             +image('parallax-budda/budda-sky.jpg', 'parallax__img', 'фон секции') 
@@ -44,8 +44,8 @@ html(lang="ru")
             +image('parallax-budda/cloud-2.png', 'parallax__img', 'фон секции')
           .parallax-budda__layer(data-speedbudda="0.27")
             +image('parallax-budda/cloud-3.png', 'parallax__img', 'фон секции')
-          include ./pages/sections/reviews
-          include ./pages/sections/section-form
-        include ./pages/sections/footer
+          include ./templates/reviews
+          include ./templates/common/form
+        include ./templates/footer
 
       
