@@ -1,0 +1,104 @@
+.skillslist {
+    position: relative;
+}
+
+.skillslist__container {
+    position: relative;
+
+    @include tablets {
+        padding-bottom: 54%;
+    }
+
+    @include phones {
+        padding-bottom: 88%;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        background: url('~images/decor/bag.jpg') left bottom / contain no-repeat;
+        display: block;
+        bottom: 5%;
+        height: 79%;
+        width: 69%;
+        left: -20%;
+
+        @include tablets {
+            bottom: 0;
+            left: 50%;
+            height: 300px;
+            transform: translateX(-50%);
+            background-position: center center;
+        }
+
+        @include phones {
+            width: 100%;
+        }
+    }
+}
+
+.skillslist__wrapper {
+    margin-bottom: 150px;
+
+    @include desktop {
+        margin-bottom: 104px;
+    }
+}
+
+.skillslist__title {
+    display: flex;
+    justify-content: center;
+
+    @include phones {
+        justify-content: flex-start;
+    }
+}
+
+.skillslist__title-box {
+    max-width: 585px;
+    margin-left: 8%;
+
+    @include tablets {
+        margin-left: 0;
+        max-width: none;
+        width: 57%;
+    }
+
+    @include phones {
+        width: 100%;
+    }
+}
+
+.skillslist__title-text {
+    margin-bottom: 50px;
+
+    @include tablets {
+        padding: 0px 10%;
+        text-align: center
+    }
+
+    @include phones {
+        text-align: left;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+}
+
+.skillslist__content {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 89px;
+
+    @include desktop {
+        margin-right: 0;
+    }
+
+    @include tablets {
+        justify-content: center;
+    }
+}
+
+.skillslist__title-subtext {
+    margin-bottom: 82px;
+
+}

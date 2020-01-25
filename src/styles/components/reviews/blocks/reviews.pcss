@@ -1,0 +1,30 @@
+.reviews {
+    position: relative;
+}
+
+.reviews__wrapper {
+    margin: 189px 0;
+}
+
+.reviews__header {
+    display: flex;
+}
+
+.reviews__content {
+    width: 63%;
+
+    @include desktop {
+        width: 84%;
+    }
+
+    @include tablets {
+        width: 100%;
+    }
+}
+.reviews__title {
+    margin-right: 107px;
+
+    @include tablets {
+        margin-right: 35px;
+    }
+}

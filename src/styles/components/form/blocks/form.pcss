@@ -1,0 +1,115 @@
+.form__title {
+    margin-bottom: 80px;
+
+    @include tablets {
+        text-align: center;
+    }
+
+    @include phones {
+        margin-bottom: 35px;
+    }
+}
+
+.form {
+    position: relative;
+}
+
+.form__list {
+    display: flex;
+    margin-bottom: 33px;
+
+    @include phones {
+        display: block;
+    }
+}
+
+.form__row {
+    margin-bottom: 84px;
+}
+
+.form__btn {
+
+    @include tablets {
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+.form__block {
+    margin-right: 90px;
+    width: 100%;
+    position: relative;
+
+    @include desktop {
+        margin-right: 45px;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+
+.form__block-title {
+    color: $text-color-opacity3;
+    font-weight: 600;
+    margin-left: 46px;
+}
+
+.form__box {
+    width: 58%;
+
+    @include desktop {
+        width: 83%;
+    }
+
+    @include tablets {
+        width: 100%;
+    }
+}
+
+.form__input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $text-color;
+    padding: 23px 46px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    color: $text-color;
+    position: relative;
+    background-color: transparent;
+
+    &:focus {
+        border-color: $hover-color-purple;
+    }
+}
+
+.form__input-icon {
+    width: 30px;
+    height: 30px;
+    left: 0;
+    top: 45%;
+    position: absolute;
+    fill: $text-color-opacity-form
+}
+
+.form__input--textarea {
+    line-height: 30px;
+    resize: vertical;
+    height: 81px;
+    border-bottom: none;
+}
+
+.form__block--textarea {
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        width: 100%;
+        border-bottom: 1px solid $text-color;
+    }
+}

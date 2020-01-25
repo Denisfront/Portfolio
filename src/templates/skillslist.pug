@@ -1,0 +1,50 @@
+section.skillslist
+  .skillslist__wrapper
+    .container.container--hidden.skillslist__container
+      .skillslist__title
+        .skillslist__title-box
+          .skillslist__title-text.title Чем я могу быть полезен вам
+          .skillslist__title-subtext.text
+            p
+              |       Этот сайт я сделал в рамках обучения в Школе онлайн
+              |      образования LoftSchool. Чуть позже я освежу в нём свой 
+              |     контент. А пока посмотрите, как тут всё классно и красиво!
+      .skillslist__content
+        -
+          var items = [
+            ["Frontend", ["HTML5", "CSS3", "Javascript", "Vue.js"]],
+            ["Workflow", ["GIT", "Terminal", "Gulp", "Webpack"]]
+          ];
+
+        ul.skills-graphic
+          each row in items
+            li.skills-graphic__item
+              .skills
+                .skills__title.title.title--font #{row[0]}
+                .skills__content 
+                  ul.skills-ltems
+                    each skill in row[1]
+                      li.skills-items__item
+                        .skill 
+                          svg.skill__circle(viewBox="0 0 150 150")
+                            circle.circle(
+                              stroke="#e9e9e9", 
+                              stroke-width="10"
+                              cx="75"
+                              cy="75"
+                              r="65"
+                              fill="transparent"
+                              )
+                            circle.circle__round(
+                            stroke="url(#gradient)", 
+                            stroke-width="20"
+                            cx="75"
+                            cy="75"
+                            r="65"
+                            fill="transparent"
+                            style="transform-origin: center; transform: rotate(-180deg);"
+                            )
+                            linearGradient#gradient
+                              stop(offset="0%" stop-color="#9300e8")
+                              stop(offset="100%" stop-color="#4a00ed")                           
+                          .skill__title.subtitle #{skill}

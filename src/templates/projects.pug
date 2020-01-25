@@ -1,0 +1,43 @@
+section.projects
+    .projects__wrapper
+        .container 
+            h2.projects__title.title.title--medium Мои работы
+            .projects__content
+                .slider
+                    .slider__display
+                        .slider__display-content
+                            .slider__display-pic
+                                +image('content/mywork1.jpg', 'slider__display-img')
+                            .slider__display-preview
+                                -
+                                    var items = [
+                                        ["content/mywork2.jpg", ["slider-preview__images"]],
+                                        ["content/mywork3.jpg", ["slider-preview__images"]],
+                                        ["content/mywork4.jpg", ["slider-preview__images"]],
+                                        ["content/mywork5.jpg", ["slider-preview__images"]]
+                                    ];
+                                ul.slider-preview
+                                    each col in items
+                                        li.slider-preview__item
+                                            +image(`${col[0]}`, `${col[1]}`)
+                            .slider__buttons
+                                a.direction-btn.direction-btn--next
+                                a.direction-btn.direction-btn--prev
+                    .slider__info
+                        .slider__tags
+                            -
+                                var tags = [
+                                    ["HTML"],
+                                    ["CSS"],
+                                    ["Javasctipt"]
+                                ];
+                            ul.tags
+                                each tag in tags
+                                    li.tags__item #{tag[0]}
+                        .slider__info-text
+                            h3.slider__info-title.title Сайт школы образования
+                            .skider__info-desc.text 
+                                | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                        .slider__info-btns
+                            a.btn-link(href="#") Посмотреть сайт
+                        
