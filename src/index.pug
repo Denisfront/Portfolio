@@ -10,6 +10,9 @@ html(lang="ru")
   body
     .wrapper
       .parallax
+        //- picture
+        //-   source(srcset="./src/images/background/mountain.jpg" media="screen and (min-width: 768px").mountain__img
+        //- +image(`${imgSpeed[0]}`,`${imgSpeed[1]}`, 'section background')
         - 
           var imagesNumberspeed = [
             ["parallax/sky.jpg",        ["parallax__img"],   ["0.1"]],
@@ -24,8 +27,8 @@ html(lang="ru")
         each imgSpeed in imagesNumberspeed
           .parallax__layer(data-speed=`${imgSpeed[2]}`)
             picture
-              source(srcset="images/background/mountain.jpg" media="screen and (max-width: 768px")
-              +image(`${imgSpeed[0]}`,`${imgSpeed[1]}`, 'section background')
+              source(srcset=require(`images/${imgSpeed[0]}`) media="screen and (min-width: 768px)").parallax__img
+              +image('background/mountain.jpg', 'section background')
         include ./templates/home
         include ./templates/about
       .maincontent
