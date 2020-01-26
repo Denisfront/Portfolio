@@ -44,6 +44,7 @@
 
     @include desktop {
         margin-right: 24px;
+        margin-bottom: 60px;
     }
 
 
@@ -61,6 +62,10 @@
     margin-right: 82px;
     color: $text-color-opacity3;
     font-weight: 600;
+
+    @include tablets {
+        margin-right: 52px;
+    }
 }
 
 .about__list.about__list--color {
@@ -70,6 +75,10 @@
 
 .about__item {
     margin-bottom: 17px;
+
+    @include tablets {
+        margin-bottom: 15px;
+    }
 
     &:last-child {
         margin-bottom: 0;
@@ -82,7 +91,7 @@
     font-weight: 600;
 
     @include phones {
-        padding-right: 10%; 
+        padding-right: 10%;
     }
 
 }
@@ -96,11 +105,19 @@
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 24px;
+
+    @include tablets {
+        margin-bottom: 35px;
+    }
 }
 
 .about__text {
     margin-bottom: 91px;
     line-height: 30px;
+
+    @include tablets {
+        margin-bottom: 42px;
+    }
 
     @include phones {
         margin-bottom: 40px;

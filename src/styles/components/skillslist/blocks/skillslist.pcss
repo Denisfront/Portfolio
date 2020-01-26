@@ -57,6 +57,7 @@
 .skillslist__title-box {
     max-width: 585px;
     margin-left: 8%;
+    z-index: $z-index100;
 
     @include tablets {
         margin-left: 0;
@@ -88,6 +89,7 @@
     display: flex;
     justify-content: flex-end;
     margin-right: 89px;
+    z-index: $z-index100;
 
     @include desktop {
         margin-right: 0;
@@ -101,4 +103,10 @@
 .skillslist__title-subtext {
     margin-bottom: 82px;
 
+}
+
+
+.circle__round {
+    stroke-dasharray: 251;
+    stroke-dashoffset: 100;
 }

@@ -2,7 +2,10 @@
 .slider-preview__item {
     max-width: 178px;
     transition: .3s;
-
+    
+    &.active {
+        outline: 3px solid #dc9322;
+    }
     &:hover {
         transform: translateX(-30px);
         position: relative;
@@ -18,3 +21,4 @@
         }
     }
 }
+

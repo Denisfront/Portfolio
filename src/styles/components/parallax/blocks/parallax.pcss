@@ -6,12 +6,14 @@
     background-size: cover;
     clip-path: polygon(0% 0%, 0% 93%, 50% 100%, 100% 93%, 100% 0%);
     margin-bottom: 8%;
-     @include desktop {
+
+    @include desktop {
         margin-bottom: 12%;
     }
-    
+
     @include tablets {
         margin-bottom: 0;
+        clip-path: polygon(0% 0%, 0% 96%, 50% 100%, 100% 96%, 100% 0%);
     }
 }
 
@@ -42,6 +44,12 @@
             top: 536px;
             left: 50%;
             margin-left: 15%;
+
+            @include desktop {
+                top: 36.5rem;
+                left: 50%;
+                margin-left: 26%;
+            }
         }
     }
 
@@ -56,6 +64,11 @@
         .parallax__img {
             left: 0;
             top: 562px;
+
+            @include desktop {
+                left: -19%;
+                top: 40.125rem;
+            }
         }
     }
 
@@ -63,6 +76,11 @@
         .parallax__img {
             right: 0;
             bottom: 0;
+
+            @include desktop {
+                right: -53%;
+                bottom: -9%;
+            }
         }
     }
 
