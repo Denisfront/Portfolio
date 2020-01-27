@@ -4,18 +4,22 @@
     padding: 92px 0 123px;
     margin-top: 1%;
 
-      @include desktop {
+    @include desktop {
         padding: 62px 0 75px;
     }
 }
 
 .footer__container {
     display: flex;
+
+    @include phones {
+        display: block;
+    }
 }
 
 .footer__copyright {
     display: flex;
-    width: 35%;
+    width: 34%;
 
     @include desktop {
         flex-direction: column;
@@ -23,30 +27,45 @@
     }
 
     @include tablets {
-    display: block;
+        display: block;
+    }
+
+    @include phones {
+        width: 100%;
     }
 }
 
 .footer__content {
     flex: 1;
 }
+
 .footer__logo {
     color: $white-opacity-footer-date;
     font-size: 48px;
     font-weight: 600;
     margin-right: 60px;
-     @include desktop {
-       margin-right: 0; 
+
+    @include desktop {
+        margin-right: 0;
     }
+
 }
 
-.footer__copyright-userinfo span{
+.footer__copyright-userinfo span {
     display: block;
+
+    @include phones {
+        display: inline;
+    }
 }
 
 .footer__copyright-username,
 .footer__copyright-desc {
     line-height: 30px;
+
+    @include phones {
+        line-height: normal;
+    }
 }
 
 .footer__copyright-username {
@@ -60,6 +79,7 @@
 .footer__menu {
     margin-bottom: 60px;
 }
+
 .footer__menu--color--white {
     color: $white;
 }
