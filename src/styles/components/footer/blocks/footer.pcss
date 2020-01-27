@@ -1,0 +1,121 @@
+.footer {
+    background-color: $footer-color;
+    color: $white;
+    padding: 92px 0 123px;
+    margin-top: 1%;
+
+    @include desktop {
+        padding: 62px 0 75px;
+    }
+}
+
+.footer__container {
+    display: flex;
+
+    @include phones {
+        display: block;
+    }
+}
+
+.footer__copyright {
+    display: flex;
+    width: 34%;
+
+    @include desktop {
+        flex-direction: column;
+        width: 25%;
+    }
+
+    @include tablets {
+        display: block;
+    }
+
+    @include phones {
+        width: 100%;
+    }
+}
+
+.footer__content {
+    flex: 1;
+}
+
+.footer__logo {
+    color: $white-opacity-footer-date;
+    font-size: 48px;
+    font-weight: 600;
+    margin-right: 60px;
+
+    @include desktop {
+        margin-right: 0;
+    }
+
+}
+
+.footer__copyright-userinfo span {
+    display: block;
+
+    @include phones {
+        display: inline;
+    }
+}
+
+.footer__copyright-username,
+.footer__copyright-desc {
+    line-height: 30px;
+
+    @include phones {
+        line-height: normal;
+    }
+}
+
+.footer__copyright-username {
+    margin-bottom: 25px;
+}
+
+.footer__copyright-desc {
+    color: $white-opacity-footer-text;
+}
+
+.footer__menu {
+    margin-bottom: 60px;
+}
+
+.footer__menu--color--white {
+    color: $white;
+}
+
+.footer__content-box {
+    display: flex;
+    color: $white-opacity;
+    justify-content: space-between;
+    line-height: 30px;
+
+    @include tablets {
+        display: block;
+    }
+}
+
+.footer__text {
+    width: 38%;
+    margin-bottom: 19px;
+
+    @include tablets {
+        width: 100%;
+    }
+}
+
+.footer__quote {
+    width: 50%;
+    position: relative;
+
+    @include tablets {
+        width: 100%;
+    }
+}
+
+.footer__qute-autor {
+    color: $white;
+    font-style: italic;
+    position: absolute;
+    bottom: -30px;
+}

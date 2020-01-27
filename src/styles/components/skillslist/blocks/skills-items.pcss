@@ -1,0 +1,30 @@
+.skills-ltems {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include phones {
+        justify-content: center;
+    }
+}
+
+.skills-items__item {
+    margin-right: 53px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    @include phones {
+        &:nth-child(odd) {
+            margin-right: 10px;
+        }
+
+        &:nth-child(even) {
+            margin-right: 0;
+        }
+    }
+}
+
+.skills-row__title {
+    margin-bottom: 40px;
+}

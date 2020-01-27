@@ -10,20 +10,21 @@ html(lang="ru")
   body
     .wrapper
       .parallax
-        .parallax__layer(data-speed="0.1")
-          +image('parallax/sky.jpg', 'parallax__img', 'фон секции')
-        .parallax__layer(data-speed="0.10")
-          +image('parallax/mountain.png', 'parallax__img', 'фон секции')
-        .parallax__layer(data-speed="0.15")
-          +image('parallax/baloon.png', 'parallax__img', 'фон секции')
-        .parallax__layer(data-speed="0.21")
-          +image('parallax/cloud.png', 'parallax__img', 'фон секции')
-        .parallax__layer(data-speed="0.26")
-          +image('parallax/man.png', 'parallax__img', 'фон секции')
-        .parallax__layer(data-speed="0.25")
-          +image('parallax/mountain1.png', 'parallax__img', 'фон секции')
-        .parallax__layer(data-speed="0.27")
-          +image('parallax/white.png', 'parallax__img', 'фон секции')
+        //- +image(`${imgSpeed[0]}`,`${imgSpeed[1]}`, 'section background')
+        - 
+          var imagesNumberspeed = [
+            ["parallax/sky.jpg",        ["parallax__img"],   ["0.1"]],
+            ["parallax/mountain.png",   ["parallax__img"],   ["0.15"]],
+            ["parallax/baloon.png",     ["parallax__img"],   ["0.18"]],
+            ["parallax/cloud.png",      ["parallax__img"],   ["0.21"]],
+            ["parallax/man.png",        ["parallax__img"],   ["0.25"]],
+            ["parallax/mountain1.png",  ["parallax__img"],   ["0.26"]],
+            ["parallax/white.png",      ["parallax__img"],   ["0.27"]]
+          ];
+          
+        each imgSpeed in imagesNumberspeed
+          .parallax__layer(data-speed=`${imgSpeed[2]}`)
+            +image(`${imgSpeed[0]}`,`${imgSpeed[1]}`, 'section background')
         include ./templates/home
         include ./templates/about
       .maincontent
@@ -47,5 +48,4 @@ html(lang="ru")
           include ./templates/reviews
           include ./templates/common/form
         include ./templates/footer
-
-      
+    

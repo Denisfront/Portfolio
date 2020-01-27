@@ -7,8 +7,8 @@ mixin image(path, className, description)
   img(src=require(`./images/${path}`) class=className alt=description)
 
 
-mixin nav(className,  items, activeItem)
-  nav(class=`${className}`)
+mixin nav(className, items, classNameTwo)
+  nav(class=`${className}` class=classNameTwo)
     ul(class=`${className}__list`)
       each item, ndx in items
         li(class=`${className}__item` + ( (ndx === activeItem) ? ` ${className}__item--active` : '' ))

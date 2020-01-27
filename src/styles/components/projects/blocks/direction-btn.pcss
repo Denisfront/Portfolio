@@ -1,0 +1,78 @@
+.direction-btn {
+    width: 50px;
+    height: 50px;
+    background-color: $bg-links-color;
+    position: relative;
+    display: block;
+
+    &:before {
+        content: "";
+        background: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%) center center no-repeat;
+        display: block;
+        width: 8px;
+        height: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
+        transition: opacity .3s, margin-top .3s;
+        opacity: .3;
+
+        &:hover {
+            background-color: $hover-color-purple;
+        }
+    }
+
+    &--prev {
+        &:before {
+            transform: translate(-50%, -50%) rotate(-270deg);
+        }
+    }
+
+    &:hover {
+        background-color: $hover-color-purple;
+
+        &:before {
+            opacity: 1;
+        }
+    }
+}
+
+.direction-btn.direction-btn--circle {
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid $bg-links-color;
+    margin-right: 30px;
+    margin-bottom: 90px;
+    fill: black;
+
+
+    &:before {
+        background: svg-load('arrow-down.svg', fill=black, width=100%, height=100%) center center no-repeat;
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    &:hover {
+        border-color: $hover-color-purple;
+    }
+}
+
+.direction-btn__control {
+    width: 8px;
+    height: 10px;
+    fill: currentColor;
+
+}
+
+.direction-btn__control.direction-btn__control--next {
+    transform: rotate(-90deg);
+}
+
+.direction-btn__control.direction-btn__control--prev {
+    transform: rotate(90deg);
+}
+
+.direction-btn__control.direction-btn__control--next--reviews {
+    transform: rotate(180deg);
+}

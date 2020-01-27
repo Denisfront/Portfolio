@@ -34,6 +34,19 @@ body {
   max-width: 1480px;
   width: 92%;
 
+  &--hidden {
+    @include tablets {
+      margin: 0;
+      max-width: none;
+      width: auto;
+    }
+
+    @include phones {
+      margin: 0 auto;
+      max-width: 1480px;
+    }
+  }
+
   @include phones {
     width: 85%;
   }
@@ -99,6 +112,10 @@ img {
 
 .title--medium {
   font-size: 36px;
+
+  @include phones {
+    font-size: 24px;
+  }
 }
 
 .title--font {
@@ -109,6 +126,7 @@ img {
   font-size: 18px;
   font-weight: 600;
 }
+
 .subtitle--color {
   color: $text-color-opacity5;
 }
@@ -123,6 +141,10 @@ img {
   color: $text-color-opacity5;
   font-weight: 600;
   line-height: 30px;
+
+  @include tablets {
+    line-height: 24px;
+  }
 }
 
 .text--italic {
