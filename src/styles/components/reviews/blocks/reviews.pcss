@@ -3,7 +3,17 @@
 }
 
 .reviews__wrapper {
-    margin: 255px 0 190px 0;
+    margin: 0 0 190px 0;
+    padding-top: 14%;
+
+    @include desktop {
+        padding-top: 16%;
+    }
+
+    @include tablets {
+        padding-top: 27%;
+        margin-bottom: 128px;
+    }
 }
 
 .reviews__header {
@@ -23,6 +33,10 @@
 }
 .reviews__title {
     margin-right: 107px;
+
+    @include desktop {
+        margin-right: 97px;
+    }
 
     @include tablets {
         margin-right: 35px;

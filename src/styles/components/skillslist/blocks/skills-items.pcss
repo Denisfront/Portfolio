@@ -10,6 +10,10 @@
 .skills-items__item {
     margin-right: 53px;
 
+    @include tablets {
+        margin-right: 27px;
+    }
+
     &:last-child {
         margin-right: 0;
     }
@@ -23,8 +27,4 @@
             margin-right: 0;
         }
     }
-}
-
-.skills-row__title {
-    margin-bottom: 40px;
 }

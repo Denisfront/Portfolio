@@ -1,14 +1,15 @@
 .about {
     display: flex;
     justify-content: center;
+    padding-bottom: 267px;
 
     @include desktop {
         justify-content: flex-start;
-        padding-left: 3%;
+        padding-left: 4%;
     }
 
     @include tablets {
-        padding: 3%;
+        padding: 0 3% 163px 4%;
     }
 }
 
@@ -26,6 +27,7 @@
 .about__wrapper {
     width: 958px;
     display: flex;
+    justify-content: space-between;
     z-index: $z-index100;
 
     @include desktop {
@@ -41,13 +43,17 @@
     display: flex;
     justify-content: center;
     margin-bottom: 73px;
+    margin-left: 34px;
 
     @include desktop {
         margin-right: 24px;
-        margin-bottom: 60px;
+        margin-bottom: 76px;
     }
 
-
+    @include tablets {
+        margin-left: 0;
+        margin-bottom: 65px;
+    }
     @include phones {
         justify-content: center;
         margin-bottom: 25px;
@@ -64,7 +70,7 @@
     font-weight: 600;
 
     @include tablets {
-        margin-right: 52px;
+        margin-right: 31px;
     }
 }
 
@@ -86,7 +92,7 @@
 }
 
 .about__right {
-    flex: 1;
+    width: 55%;
     color: $text-color-opacity5;
     font-weight: 600;
 
@@ -107,13 +113,12 @@
     margin-bottom: 24px;
 
     @include tablets {
-        margin-bottom: 35px;
+        margin-bottom: 40px;
     }
 }
 
 .about__text {
     margin-bottom: 91px;
-    line-height: 30px;
 
     @include tablets {
         margin-bottom: 42px;

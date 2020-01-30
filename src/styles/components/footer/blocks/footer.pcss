@@ -2,10 +2,9 @@
     background-color: $footer-color;
     color: $white;
     padding: 92px 0 123px;
-    margin-top: 1%;
 
     @include desktop {
-        padding: 62px 0 75px;
+        padding: 76px 0 75px;
     }
 }
 
@@ -28,6 +27,7 @@
 
     @include tablets {
         display: block;
+        width: 34%;
     }
 
     @include phones {
@@ -70,6 +70,10 @@
 
 .footer__copyright-username {
     margin-bottom: 25px;
+
+    @include desktop {
+        margin-bottom: 15px;
+    }
 }
 
 .footer__copyright-desc {
@@ -78,6 +82,10 @@
 
 .footer__menu {
     margin-bottom: 60px;
+
+    @include tablets {
+        margin-bottom: 33px;
+    }
 }
 
 .footer__menu--color--white {
@@ -95,8 +103,29 @@
     }
 }
 
+.footer__item {
+    width: 40%;
+
+    @include tablets {
+        width: 100%;
+        margin-bottom: 59px;
+    }
+}
+
+.footer__item-text {
+    width: 48%;
+
+    @include desktop {
+        width: 55%;
+    }
+
+    @include tablets {
+        width: 100%;
+    }
+
+}
+
 .footer__text {
-    width: 38%;
     margin-bottom: 19px;
 
     @include tablets {
@@ -105,17 +134,15 @@
 }
 
 .footer__quote {
-    width: 50%;
-    position: relative;
+    margin-bottom: 16px;
 
     @include tablets {
         width: 100%;
+        margin-bottom: 6px;
     }
 }
 
 .footer__qute-autor {
     color: $white;
     font-style: italic;
-    position: absolute;
-    bottom: -30px;
 }

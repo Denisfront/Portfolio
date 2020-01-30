@@ -3,6 +3,7 @@
 
     @include tablets {
         text-align: center;
+        margin-bottom: 51px;
     }
 
     @include phones {
@@ -12,6 +13,18 @@
 
 .form {
     position: relative;
+}
+
+.form__wrapper {
+    padding-bottom: 125px;
+
+    @include desktop {
+        padding-bottom: 163px;
+    }
+
+    @include tablets {
+        padding-bottom: 120px;
+    }
 }
 
 .form__list {
@@ -25,6 +38,10 @@
 
 .form__row {
     margin-bottom: 84px;
+
+    @include tablets {
+        margin-bottom: 65px;
+    }
 }
 
 .form__btn {

@@ -23,8 +23,13 @@
         width: 69%;
         left: -8%;
 
-        @include tablets {
+        @include desktop {
+            left: -23%;
             bottom: 0;
+        }
+
+        @include tablets {
+            bottom: 34px;
             left: 50%;
             height: 300px;
             transform: translateX(-50%);
@@ -41,7 +46,11 @@
     margin-bottom: 150px;
 
     @include desktop {
-        margin-bottom: 104px;
+        margin-bottom: 120px;
+    }
+
+    @include tablets {
+        margin-bottom: 35px;
     }
 }
 
@@ -59,6 +68,10 @@
     margin-left: 8%;
     z-index: $z-index100;
 
+    @include desktop {
+        margin-left: 4%;
+    }
+
     @include tablets {
         margin-left: 0;
         max-width: none;
@@ -75,7 +88,8 @@
 
     @include tablets {
         padding: 0px 10%;
-        text-align: center
+        text-align: center;
+        margin-bottom: 12px;
     }
 
     @include phones {
@@ -102,6 +116,10 @@
 
 .skillslist__title-subtext {
     margin-bottom: 82px;
+
+    @include tablets {
+        margin-bottom: 69px;
+    }
 
 }
 

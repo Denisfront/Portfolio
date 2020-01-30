@@ -19,8 +19,9 @@
     }
 
     @include tablets {
-        width: 86%;
+        width: 91%;
         margin-bottom: 103px;
+        height: 410px;
     }
 
     @include phones {
@@ -91,7 +92,8 @@
     position: relative;
 
     @include desktop {
-        width: 32%;
+        width: 33%;
+
     }
 
     @include tablets {
@@ -113,8 +115,12 @@
 }
 
 
-.skider__info-desc {
+.slider__info-desc {
     margin-bottom: 40px;
+
+    @include tablets {
+        margin-bottom: 21px;
+    }
 }
 
 .slider__tags {
