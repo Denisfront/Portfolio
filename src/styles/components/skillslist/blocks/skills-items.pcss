@@ -1,0 +1,38 @@
+.skills-ltems {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+
+    @include phones {
+        justify-content: center;
+    }
+}
+
+.skills-items__item {
+    margin-right: 53px;
+
+    @include tablets {
+        margin-right: 27px;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    @include phones {
+        &:nth-child(odd) {
+            margin-right: 10px;
+        }
+
+        @include mobile {
+            &:nth-child(odd) {
+                margin-right: 0;
+                width: calc(100% / 2 - 0px);
+            }
+        }
+
+        &:nth-child(even) {
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+.last-section {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 100% 100%, 100% 0%, 50% 7%);
+
+    @include desktop {
+        clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 100% 100%, 100% 0%, 51% 4%);
+    }
+
+    @include phones {
+        clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 100% 100%, 100% 0%, 50% 1%);
+    }
+}
+
+.parallax-budda {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.parallax-budda__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &:nth-child(1) {
+        display: block;
+
+        .parallax__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    &:nth-child(2) {
+        display: block;
+
+        .parallax__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    &:nth-child(3) {
+        .parallax__img {
+            left: 0;
+            bottom: 0;
+        }
+
+    }
+
+    &:nth-child(4) {
+        .parallax__img {
+            top: 588px;
+            left: 50%;
+            margin-left: 327px;
+
+        }
+
+    }
+
+    &:nth-child(5) {
+        .parallax__img {
+            left: 0;
+            bottom: 0;
+        }
+
+    }
+
+    &:nth-child(6) {
+        .parallax__img {
+            right: 0;
+            bottom: 0;
+        }
+
+    }
+
+    &:nth-child(7) {
+        .parallax__img {
+            bottom: 0;
+        }
+
+    }
+}

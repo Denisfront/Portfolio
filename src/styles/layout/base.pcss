@@ -1,8 +1,4 @@
 html {
-  @include desktop {
-    font-size: 15px;
-  }
-
   @include tablets {
     font-size: 14px;
   }
@@ -20,7 +16,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $text-color;
+
+  &.body__hidden {
+    overflow: hidden;
+  }
 }
+
 
 .wrapper {
   overflow: hidden;
@@ -32,11 +33,21 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1480px;
-  width: 95%;
-  // width: 1490px;
+  width: 92%;
 
-  @include phones {
-    width: 85%;
+  &--hidden {
+
+    @include phones {
+      margin: 0 auto;
+      max-width: 1480px;
+      width: 85%;
+    }
+
+    @include mobile {
+      margin: 0;
+      max-width: none;
+      width: auto;
+    }
   }
 }
 
@@ -100,6 +111,10 @@ img {
 
 .title--medium {
   font-size: 36px;
+
+  @include phones {
+    font-size: 24px;
+  }
 }
 
 .title--font {
@@ -110,6 +125,7 @@ img {
   font-size: 18px;
   font-weight: 600;
 }
+
 .subtitle--color {
   color: $text-color-opacity5;
 }
@@ -124,6 +140,10 @@ img {
   color: $text-color-opacity5;
   font-weight: 600;
   line-height: 30px;
+
+  @include tablets {
+    line-height: 24px;
+  }
 }
 
 .text--italic {

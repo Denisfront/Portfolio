@@ -1,0 +1,45 @@
+.popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.popup__wrapper {
+    position: absolute;
+    height: 100vh;
+    width: 40%;
+    top: 0;
+    right: -100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: right .5s;
+
+    @include phones {
+        width: 100%;
+    }
+}
+
+.popup__menu {
+    margin-bottom: 25px;
+}
+
+.popup__menu,
+.popup__socials {
+    margin-left: 90px;
+}
+
+.popup__btn {
+    position: absolute;
+    top: 7%;
+    right: 13%;
+    z-index: 200;
+}
+
+.popup__btn-cross {
+    cursor: pointer;
+    width: 25px;
+}

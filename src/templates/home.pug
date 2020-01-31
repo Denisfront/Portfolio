@@ -1,0 +1,39 @@
+
+section.home
+  .popup
+    .popup__wrapper
+      .popup__btn
+        .popup__btn-cross
+          +icon('cross')
+      .popup__menu
+        +nav('menu-side', ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"])
+      .popup__socials
+        ul.socials
+          each social in ['insta', 'vk', 'github']
+            li.socials__item
+              a(class=`socials__link socials__link_${social}` href="#")
+                +icon(`${social}`, `socials__icon`)
+  .container
+    .home__wrapper
+      header.home__header
+        .home__logo
+          .logo СД
+        .home__menu.home__menu--hidden
+          +nav('menu', ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"])
+        .home__links
+          ul.socials.socials--hidden
+            each social in ['insta', 'vk', 'github']
+              li.socials__item
+                a(class=`socials__link socials__link_${social}` href="#")
+                  +icon(`${social}`, `socials__icon`)
+          .humburger-menu
+            .humburger-menu__btn
+              +icon('popup','popup__icon')
+      .home__content
+        .user-info
+          .user-info__desc Личный сайт 
+            span frontend разработчика
+          .user-info__username Cанников
+            span Денис 
+      .home__buttons
+        a.scroll-down Скролл

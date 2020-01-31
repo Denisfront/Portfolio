@@ -9,25 +9,48 @@ html(lang="ru")
     title Portfolio | main page
   body
     .wrapper
-      .welcome-sections
-        .parallax
-          +image('background/mountain.jpg', 'parallax__img', 'фон секции')
-        include ./pages/sections/hero
-        include ./pages/sections/user
       .maincontent
-        include ./pages/sections/values
-        include ./pages/sections/mywork
-        include ./pages/sections/reviews
-        include ./pages/sections/section-form
-        include ./pages/sections/footer
-
-        
-
-
-
-   
-
-
+        .welcome-section
+          section.parallax#parallax
+            - 
+              var path1ToTheImg = [
+                ["parallax/sky.jpg"],
+                ["parallax/mountain.png"],
+                ["parallax/baloon.png"],
+                ["parallax/cloud.png"],
+                ["parallax/man.png"],
+                ["parallax/mountain1.png"],
+                ["parallax/white.png"]
+              ];
+            
+            each Path1 in path1ToTheImg
+              .parallax__layer(:data-speed="speed")
+                +image(`${Path1[0]}`,'parallax__img', 'section background')
+          include ./templates/home
+          include ./templates/about
+        .middle-section
+          include ./templates/skillslist
+          include ./templates/projects
+        .last-section
+          section.parallax-budda
+            -
+              var path2ToTheImg = [
+                ["parallax-budda/budda-sky.jpg"],
+                ["parallax-budda/back-budda-sky.png"],
+                ["parallax-budda/budda-mountain.png"],
+                ["parallax-budda/buddha.png"],
+                ["parallax-budda/cloud-1.png"],
+                ["parallax-budda/cloud-2.png"],
+                ["parallax-budda/cloud-3.png"]
+              ];
               
+            each path2 in path2ToTheImg
+              .parallax-budda__layer
+                +image(`${path2}`, 'parallax__img', 'section background')
+          include ./templates/reviews
+          include ./templates/common/form
+        include ./templates/footer
 
-              
+
+  
+    

@@ -1,0 +1,67 @@
+.reviews {
+    position: relative;
+}
+
+.reviews__wrapper {
+    margin: 0 0 190px 0;
+    padding-top: 14%;
+
+    @include desktop {
+        padding-top: 16%;
+    }
+
+    @include tablets {
+        padding-top: 27%;
+        margin-bottom: 128px;
+    }
+
+    @include mobile {
+        padding-top: 33%;
+        margin-bottom: 165px;
+    }
+}
+
+.reviews__header {
+    display: flex;
+
+    @include mobile {
+        flex-direction: column;
+    }
+}
+
+.reviews__btn {
+    display: flex;
+
+    @include mobile {
+        margin-bottom: 35px;
+        justify-content: center;
+    }
+}
+
+.reviews__content {
+    width: 63%;
+
+    @include desktop {
+        width: 84%;
+    }
+
+    @include tablets {
+        width: 100%;
+    }
+}
+
+.reviews__title {
+    margin-right: 107px;
+
+    @include desktop {
+        margin-right: 97px;
+    }
+
+    @include tablets {
+        margin-right: 35px;
+    }
+
+    @include mobile {
+        margin-bottom: 35px;
+    }
+}

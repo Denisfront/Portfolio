@@ -1,0 +1,64 @@
+
+section.projects
+    .projects__wrapper
+        .container.container--hidden 
+            h2.projects__title.title.title--medium Мои работы
+            .projects__content
+                #slider-component
+
+script(type="text/x-template")#slider-container
+    .slider
+        display(
+            :projects="projects",
+            :currentWork="currentWork"
+            :currentIndex="currentIndex"
+            @slide="handleSlide"
+        )
+        info(
+            :currentWork="currentWork"
+        )
+        
+        
+script(type="text/x-template")#slider-display
+    .slider__display
+        .slider__display-content
+            .slider__display-pic(:data-slide="currentIndex + 1")
+                img( :src="currentWork.photo", alt="", srcset="", class="slider__display-img")
+            .slider__display-preview
+                preview(
+                    :projects="reverseWorks"
+                    :currentWork="currentWork"
+                )
+                btns(
+                    @slide="$emit('slide', $event)"
+                )
+            
+script(type="text/x-template")#slider-btns
+    .slider__buttons
+        a(@click.prevent="$emit('slide', 'next')" href="#").direction-btn.direction-btn--next
+        a(@click.prevent="$emit('slide', 'prev')" href="#").direction-btn.direction-btn--prev
+
+script(type="text/x-template")#slider-preview
+    ul.slider-preview
+        li.slider-preview__item(
+            v-for="project in projects"
+            :class="{active: project.id === currentWork.id}"   
+            )
+            img(:src="project.photo", alt="", srcset="", class="slider-preview__images")
+
+script(type="text/x-template")#slider-info
+    .slider__info
+        .slider__tags
+            tags(
+                :tags="tagsArray"
+            )
+        .slider__info-text
+            h3.slider__info-title.title {{currentWork.title}}
+            .slider__info-desc.text 
+                | {{currentWork.desc}}
+        .slider__info-btns
+            a.btn-link(:href="currentWork.link") Посмотреть сайт
+
+script(type="text/x-template")#slider-tags
+    ul.tags
+        li.tags__item(v-for="tag in tags") {{tag}}

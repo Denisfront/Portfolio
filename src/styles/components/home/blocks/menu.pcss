@@ -1,0 +1,49 @@
+.home__menu--hidden .menu {
+    @include tablets {
+        display: none;
+    }
+}
+
+.menu--color--white .menu__list {
+    color: $white;
+}
+
+.menu__list {
+    display: flex;
+    color: $text-color;
+
+    @include tablets {
+        flex-wrap: wrap;
+    }
+
+}
+
+.menu__item {
+    margin-right: 61px;
+
+    @include tablets {
+        margin-bottom: 20px;
+        margin-right: 79px;
+
+        &:nth-child(4) {
+            margin-right: 0;
+        }
+    }
+
+    @include mobile {
+        margin-bottom: 26px;
+        margin-right: 83px;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.menu__link {
+    text-decoration: none;
+
+    &:hover {
+        text-shadow: 0 0 1.2px #333, 0 0 1.2px #333;
+    }
+}

@@ -1,4 +1,5 @@
 {
+  "menu-side-color": "#414c63",
   "white": "#fff",
   "white-opacity": "rgba(#fff, .3);",
   "white-opacity-footer-date": "rgba(#fff, .1);",
@@ -17,5 +18,7 @@
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-tablets": "768px",
-  "bp-phones": "480px"
+  "bp-phones": "480px",
+  "bp-mobile": "320px",
+  "z-index100": "100"
 }
