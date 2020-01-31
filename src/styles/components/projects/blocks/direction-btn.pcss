@@ -46,6 +46,10 @@
     margin-bottom: 90px;
     fill: black;
 
+    @include mobile {
+        margin-bottom: 0;
+    }
+
 
     &:before {
         background: svg-load('arrow-down.svg', fill=black, width=100%, height=100%) center center no-repeat;

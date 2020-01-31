@@ -14,10 +14,28 @@
         padding-top: 27%;
         margin-bottom: 128px;
     }
+
+    @include mobile {
+        padding-top: 33%;
+        margin-bottom: 165px;
+    }
 }
 
 .reviews__header {
     display: flex;
+
+    @include mobile {
+        flex-direction: column;
+    }
+}
+
+.reviews__btn {
+    display: flex;
+
+    @include mobile {
+        margin-bottom: 35px;
+        justify-content: center;
+    }
 }
 
 .reviews__content {
@@ -31,6 +49,7 @@
         width: 100%;
     }
 }
+
 .reviews__title {
     margin-right: 107px;
 
@@ -40,5 +59,9 @@
 
     @include tablets {
         margin-right: 35px;
+    }
+
+    @include mobile {
+        margin-bottom: 35px;
     }
 }

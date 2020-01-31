@@ -9,6 +9,10 @@
     @include phones {
         margin-bottom: 35px;
     }
+
+    @include mobile {
+        margin-bottom: 56px;
+    }
 }
 
 .form {
@@ -101,6 +105,10 @@
     &:focus {
         border-color: $hover-color-purple;
     }
+
+    @include mobile {
+        margin-bottom: 19px;
+    }
 }
 
 .form__input-icon {
@@ -109,7 +117,11 @@
     left: 0;
     top: 45%;
     position: absolute;
-    fill: $text-color-opacity-form
+    fill: $text-color-opacity-form;
+
+    @include tablets {
+        display: none;
+    }
 }
 
 .form__input--textarea {
