@@ -2,6 +2,10 @@
     position: relative;
 }
 
+.container__reviews {
+    position: relative;
+}
+
 .reviews__wrapper {
     margin: 0 0 190px 0;
     padding-top: 14%;
@@ -23,6 +27,11 @@
 
 .reviews__header {
     display: flex;
+    margin-bottom: 90px;
+
+    @include phones {
+        justify-content: center;
+    }
 
     @include mobile {
         flex-direction: column;
@@ -31,6 +40,18 @@
 
 .reviews__btn {
     display: flex;
+    position: absolute;
+    top: 0;
+    left: 43%;
+
+    @include tablets {
+        left: 57%;
+    }
+
+    @include phones {
+        left: 35%;
+        top: 18%;
+    }
 
     @include mobile {
         margin-bottom: 35px;
@@ -39,7 +60,7 @@
 }
 
 .reviews__content {
-    width: 63%;
+    width: 69%;
 
     @include desktop {
         width: 84%;
@@ -51,17 +72,10 @@
 }
 
 .reviews__title {
-    margin-right: 107px;
-
-    @include desktop {
-        margin-right: 97px;
-    }
-
-    @include tablets {
-        margin-right: 35px;
-    }
 
     @include mobile {
         margin-bottom: 35px;
+        display: flex;
+        justify-content: center;
     }
 }
