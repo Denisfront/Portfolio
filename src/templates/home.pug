@@ -21,7 +21,7 @@ section.home
         .home__menu.home__menu--hidden
           +nav('menu', ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"])
         .home__links
-          ul.socials
+          ul.socials.socials--hidden
             each social in ['insta', 'vk', 'github']
               li.socials__item
                 a(class=`socials__link socials__link_${social}` href="#")

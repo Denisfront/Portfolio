@@ -1,4 +1,14 @@
 
+// import Vue from "vue";
+
+// new Vue ({
+//     el: "#parallax",
+//     data: {
+//         speed: "0.2" 
+//     }
+
+// });
+
 const parallax = document.querySelector('.parallax');
 const layers = parallax.children;
 

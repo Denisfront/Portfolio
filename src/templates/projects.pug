@@ -1,7 +1,7 @@
 
 section.projects
     .projects__wrapper
-        .container 
+        .container.container--hidden 
             h2.projects__title.title.title--medium Мои работы
             .projects__content
                 #slider-component
@@ -54,7 +54,7 @@ script(type="text/x-template")#slider-info
             )
         .slider__info-text
             h3.slider__info-title.title {{currentWork.title}}
-            .skider__info-desc.text 
+            .slider__info-desc.text 
                 | {{currentWork.desc}}
         .slider__info-btns
             a.btn-link(:href="currentWork.link") Посмотреть сайт

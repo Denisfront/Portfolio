@@ -11,13 +11,16 @@ footer.footer
             .footer__menu.footer__menu--color--white
                 +nav('menu', ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"], 'menu--color--white')
             .footer__content-box
-                .footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
-                .footer__quote
-                    p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                .footer__item
+                    .footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                    .footer__links
+                        ul.socials.socials--appearance
+                            each social in ['insta', 'vk', 'github']
+                                li.socials__item
+                                    a(class=`socials__link socials__link_${social}` href="#")
+                                        +icon(`${social}`, `socials__icon`)
+                .footer__item-text
+                    .footer__quote
+                        p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                     .footer__qute-autor Martin Golding
-            .footer__links
-                ul.socials.socials--appearance
-                    each social in ['insta', 'vk', 'github']
-                        li.socials__item
-                            a(class=`socials__link socials__link_${social}` href="#")
-                                +icon(`${social}`, `socials__icon`)
+            

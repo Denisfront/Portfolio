@@ -2,10 +2,13 @@
     background-color: $footer-color;
     color: $white;
     padding: 92px 0 123px;
-    margin-top: 1%;
 
     @include desktop {
-        padding: 62px 0 75px;
+        padding: 76px 0 75px;
+    }
+
+    @include mobile {
+        padding: 47px 0 75px;
     }
 }
 
@@ -28,10 +31,17 @@
 
     @include tablets {
         display: block;
+        width: 34%;
+
     }
 
     @include phones {
         width: 100%;
+        margin-bottom: 20px;
+    }
+
+    @include mobile {
+        margin-bottom: 48px;
     }
 }
 
@@ -47,6 +57,11 @@
 
     @include desktop {
         margin-right: 0;
+    }
+
+    @include mobile {
+        font-size: 55px;
+        margin-bottom: 11px;
     }
 
 }
@@ -70,6 +85,14 @@
 
 .footer__copyright-username {
     margin-bottom: 25px;
+
+    @include desktop {
+        margin-bottom: 15px;
+    }
+
+    @include mobile {
+        font-size: 21px;
+    }
 }
 
 .footer__copyright-desc {
@@ -78,6 +101,14 @@
 
 .footer__menu {
     margin-bottom: 60px;
+
+    @include tablets {
+        margin-bottom: 33px;
+    }
+
+    @include mobile {
+        margin-bottom: 15px;
+    }
 }
 
 .footer__menu--color--white {
@@ -95,8 +126,38 @@
     }
 }
 
+.footer__item {
+    width: 40%;
+
+    @include tablets {
+        width: 100%;
+        margin-bottom: 59px;
+    }
+
+    @include mobile {
+        width: 80%;
+        margin-bottom: 42px;
+    }
+}
+
+.footer__item-text {
+    width: 48%;
+
+    @include desktop {
+        width: 55%;
+    }
+
+    @include tablets {
+        width: 100%;
+    }
+
+    @include mobile {
+        width: 90%;
+    }
+
+}
+
 .footer__text {
-    width: 38%;
     margin-bottom: 19px;
 
     @include tablets {
@@ -105,17 +166,19 @@
 }
 
 .footer__quote {
-    width: 50%;
-    position: relative;
+    margin-bottom: 16px;
 
     @include tablets {
         width: 100%;
+        margin-bottom: 6px;
+    }
+
+    @include mobile {
+        margin-bottom: 11px;
     }
 }
 
 .footer__qute-autor {
     color: $white;
     font-style: italic;
-    position: absolute;
-    bottom: -30px;
 }

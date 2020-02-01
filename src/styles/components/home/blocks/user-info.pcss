@@ -1,4 +1,3 @@
-
 .user-info__desc {
     font-size: 18px;
     color: rgba(70, 77, 98, .4);
@@ -13,9 +12,15 @@
     font-weight: 800;
     line-height: 60px;
     color: #464e62;
+
+    @include mobile {
+        font-size: 41px;
+    }
 }
+
 .user-info {
     text-align: center;
+
     @include desktop {
         display: flex;
         text-align: start;
@@ -26,17 +31,25 @@
         text-align: center;
     }
 }
+
 .user-info__desc {
-  @include desktop {
+    @include desktop {
         text-align: right;
         margin-right: 60px;
-    } 
+    }
 
     @include tablets {
         margin-right: 0;
         text-align: center;
     }
+
+    @include mobile {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
 }
+
+
 .user-info__desc span,
 .user-info__username span {
     display: block;
