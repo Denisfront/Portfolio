@@ -22,8 +22,12 @@
             a(href="#").breadcrumbs__link Отзывы
     .content
       .container.content__container
-        h1.content-title__title Блок «Обо мне»
-        button.content-title__btn добавить группу
+        .content__header
+          h1.content-title__title Блок «Обо мне»
+          button.content-title__btn Добавить группу
+        .content__items
+          .new-group
+            form.new-group__skills
 </template>
 
 <style lang="postcss">
@@ -31,7 +35,7 @@
       color: $text-color-admin;
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 80px 77px 1fr;
+      grid-template-rows: minmax(80px, max-content) 77px 1fr;
       grid-template-areas: 
           "header"
           "breadcrumbs"
@@ -121,21 +125,50 @@
       grid-area: content;
       position: relative;
 
-      grid-template: 
-        "content__header"
+     
     }
 
     .content__container {
       display: grid;
-      grid-template: 
-        "container" 139px;
-      align-items: center;  
-      height: 100%;
-
+      grid-template-rows: 139px 1fr;
+      grid-template-areas: 
+        "content-header" 
+        "items"
     }
+    .content__header {
+      grid-area: content-header;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .content__items{
+      grid-area: items;
+    }
+
     .content-title__title {
       font-size: 21px;
       font-weight: 600;
+      margin-right: 93px;
+    }
+    .content-title__btn {
+      color: $color-active-purple;
+      font-weight: 600;
+      background-color: transparent;
+      position: relative;
+      padding: 0 0 0 35px;
+
+      &:before {
+        content: '+';
+        position: absolute;
+        left: 0;
+        display: block;
+        font-weight: 600;
+        width: 21px;
+        height: 21px;
+        background-color: $color-active-purple;
+        border-radius: 50%;
+      }
     }
     .avatar {
       width: 45px;

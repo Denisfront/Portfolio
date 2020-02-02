@@ -1,14 +1,3 @@
-
-// import Vue from "vue";
-
-// new Vue ({
-//     el: "#parallax",
-//     data: {
-//         speed: "0.2" 
-//     }
-
-// });
-
 const parallax = document.querySelector('.parallax');
 const layers = parallax.children;
 
@@ -16,8 +5,7 @@ function moveLayersDependsOnScroll(wScroll) {
 
     Array.from(layers).forEach(layer => {
         const divider = layer.dataset.speed;
-        const strafe = wScroll * divider / 10;
-
+        const strafe = wScroll * divider / 23;
         layer.style.transform = `translateY(-${strafe}%)`;
 
 
@@ -32,27 +20,26 @@ window.addEventListener('scroll', e => {
 });
 
 
-// const parallaxBudda = document.querySelector('.parallax-budda');
-// const layersBudda = parallaxBudda.children;
+const parallaxBudda = document.querySelector('.parallax-budda');
+const layersbudda = parallaxBudda.children;
 
-// function moveLayersBuddaDependsOnScroll(wScroll) {
+function moveLayersBuddaDependsOnScroll(wScroll) {
 
-//     Array.from(layersBudda).forEach(layerBudda => {
-//         const divider = layerBudda.dataset.speedbudda;
-//         const wScrollNull = wScroll === 1;
-//         const strafe = wScrollNull * divider;
+    Array.from(layersbudda).forEach(layer => {
+        const divider = layer.dataset.speedbudda;
+        const strafe = wScroll * divider / 40;
+        layer.style.transform = `translateY(-${strafe}%)`;
+    })
+}
 
-//         layerBudda.style.transform = `translateY(-${strafe}%)`;
+window.addEventListener('scroll', e => {
+    const wScroll = window.pageYOffset;
+    const parallaxRect = parallaxBudda.getBoundingClientRect();
+    const parallaxPos = parallaxRect.top;
+    console.log(parallaxPos);
+    if (parallaxPos <= 135) {
+        moveLayersBuddaDependsOnScroll(wScroll);
+    }
 
 
-//     })
-// }
-
-// window.addEventListener('scroll', e => {
-//     const wScroll = window.pageYOffset;
-//     console.log(wScroll);
-//     if (wScroll >= 3004) {
-//         moveLayersBuddaDependsOnScroll(wScroll); 
-//     }
-// });
-// console.log('fff0');
+});

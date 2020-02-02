@@ -2,16 +2,18 @@ section.form
     .form__wrapper
         .container
             h3.form__title.title.title--medium Связаться со мной
-            form.form#form
+            form(@submit="checkForm" novalidate="true").form#form
                 .form__box
                     .form__list
                         label.form__item
                             .form__item-title Введите ваше имя
-                            input(name="name").form__input(type="text",placeholder="Ковальчук Дмитрий")
+                            input(name="name" v-model="name").form__input(type="text",placeholder="Ковальчук Дмитрий")
+                            .error(v-if="errors" ) {{errors[0]}}
                             +icon('user', 'form__input-icon')
                         label.form__item
                             .form__item-title Введите ваш email
-                            input(name="email").form__input(type="email", placeholder="loftshcoll@study.com")
+                            input(name="email" v-model="email").form__input(type="email", placeholder="loftshcoll@study.com")
+                            .error(v-if="errors" ) {{errors[1]}}
                             +icon('envelope', 'form__input-icon')
                     .form__row
                         label.form__item.form__block--textarea
@@ -19,7 +21,7 @@ section.form
                             textarea(name="comment").form__input.form__input--textarea(placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопросай")
                             +icon('message', 'form__input-icon')
                     .form__btn
-                        input.btn.btn--form(type="submit", value="Отправить")
+                        input(v-on:click="greet", type="submit", value="Отправить").btn.btn--form
                     
     
 

@@ -11,20 +11,20 @@ html(lang="ru")
     .wrapper
       .maincontent
         .welcome-section
-          section.parallax#parallax
+          section.parallax
             - 
               var path1ToTheImg = [
-                ["parallax/sky.jpg"],
-                ["parallax/mountain.png"],
-                ["parallax/baloon.png"],
-                ["parallax/cloud.png"],
-                ["parallax/man.png"],
-                ["parallax/mountain1.png"],
-                ["parallax/white.png"]
+                ["parallax/sky.jpg", "0.2"],
+                ["parallax/mountain.png", "0.10"],
+                ["parallax/baloon.png", "0.25"],
+                ["parallax/cloud.png", "0.28"],
+                ["parallax/man.png", "0.32"],
+                ["parallax/mountain1.png", "0.33"],
+                ["parallax/white.png", "0.35"]
               ];
             
             each Path1 in path1ToTheImg
-              .parallax__layer(:data-speed="speed")
+              .parallax__layer(data-speed=`${Path1[1]}`)
                 +image(`${Path1[0]}`,'parallax__img', 'section background')
           include ./templates/home
           include ./templates/about
@@ -35,18 +35,18 @@ html(lang="ru")
           section.parallax-budda
             -
               var path2ToTheImg = [
-                ["parallax-budda/budda-sky.jpg"],
-                ["parallax-budda/back-budda-sky.png"],
-                ["parallax-budda/budda-mountain.png"],
-                ["parallax-budda/buddha.png"],
-                ["parallax-budda/cloud-1.png"],
-                ["parallax-budda/cloud-2.png"],
-                ["parallax-budda/cloud-3.png"]
+                ["parallax-budda/budda-sky.jpg", "0.0"],
+                ["parallax-budda/back-budda-sky.png", "0.0"],
+                ["parallax-budda/budda-mountain.png", "0.2"],
+                ["parallax-budda/buddha.png", "0.10"],
+                ["parallax-budda/cloud-1.png", "0.20"],
+                ["parallax-budda/cloud-2.png", "0.23"],
+                ["parallax-budda/cloud-3.png", "0.25"]
               ];
               
             each path2 in path2ToTheImg
-              .parallax-budda__layer
-                +image(`${path2}`, 'parallax__img', 'section background')
+              .parallax-budda__layer(data-speedbudda=`${path2[1]}`)
+                +image(`${path2[0]}`, 'parallax__img', 'section background')
           include ./templates/reviews
           include ./templates/common/form
         include ./templates/footer
