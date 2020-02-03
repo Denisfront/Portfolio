@@ -101,6 +101,7 @@
     color: $text-color;
     position: relative;
     background-color: transparent;
+    position: relative;
 
     &:focus {
         border-color: $hover-color-purple;
@@ -141,4 +142,17 @@
         width: 100%;
         border-bottom: 1px solid $text-color;
     }
+}
+
+.error {
+    opacity: 0;
+    padding: 19px 21px;
+    background-color: #cd1515;
+    position: absolute;
+    color: $white;
+    font-size: 14px;
+}
+
+.displaying {
+    opacity: 1;
 }
