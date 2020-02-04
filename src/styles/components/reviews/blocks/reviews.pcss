@@ -31,29 +31,17 @@
 
     @include phones {
         justify-content: center;
+        flex-direction: column;
+        margin-bottom: 40px;
     }
 
-    @include mobile {
-        flex-direction: column;
-    }
 }
 
 .reviews__btn {
     display: flex;
-    position: absolute;
-    top: 0;
-    left: 43%;
 
-    @include tablets {
-        left: 57%;
-    }
 
     @include phones {
-        left: 35%;
-        top: 18%;
-    }
-
-    @include mobile {
         margin-bottom: 35px;
         justify-content: center;
     }
@@ -72,10 +60,21 @@
 }
 
 .reviews__title {
+    margin-right: 125px;
+    @include tablets {
+        margin-right: 25px;
+    }
+
+    @include phones {
+        margin-bottom: 35px;
+        display: flex;
+        justify-content: center;
+    }
 
     @include mobile {
         margin-bottom: 35px;
         display: flex;
         justify-content: center;
+
     }
 }

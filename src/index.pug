@@ -11,6 +11,9 @@ html(lang="ru")
     .wrapper
       .maincontent
         .welcome-section
+          picture.bg-tablets
+            source(srcset=require('./images/background/mountain.jpg') media="(max-width: 768px)")
+            img(srcset=require('images/background/budda.jpg')).bg-tablets__img
           section.parallax
             - 
               var path1ToTheImg = [
@@ -32,6 +35,9 @@ html(lang="ru")
           include ./templates/skillslist
           include ./templates/projects
         .last-section
+          picture.bg-tablets
+            source(srcset=require('./images/background/budda.jpg') media="(max-width: 768px)")
+            img(srcset=require('images/background/budda.jpg')).bg-tablets__img
           section.parallax-budda
             -
               var path2ToTheImg = [

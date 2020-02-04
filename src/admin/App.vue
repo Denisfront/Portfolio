@@ -24,7 +24,4 @@
     .btn {
       color: $white-opacity7;
     }
-  .new-group__skills {
-
-  }
 </style>

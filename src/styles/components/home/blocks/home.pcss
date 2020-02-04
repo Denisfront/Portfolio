@@ -26,7 +26,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    
+    @include laptop {
+        font-size: 15px;
+    }
 
     @include tablets {
         margin-bottom: 181px;
@@ -40,7 +43,11 @@
 }
 
 .home__menu {
-    margin: 0 90px;
+    margin: 0 35px;
+
+    @include laptop {
+        margin: 0 19px;
+    }
 }
 
 .home__content {

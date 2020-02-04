@@ -25,6 +25,7 @@
   "color-active-purple": "#383bcf",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
+  "bp-desktop1030": "1030px",
   "bp-tablets": "768px",
   "bp-phones": "480px",
   "bp-mobile": "320px",
