@@ -24,7 +24,7 @@
 
 <style lang="postcss" scoped>
     input {
-         border: none;
+        border: none;
         border-bottom: 1px solid black;
         outline: none;
     }

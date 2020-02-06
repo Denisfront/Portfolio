@@ -3,7 +3,8 @@
         //- login
         main-header
         Pagination
-        Content
+        Projects
+        //- Content
 </template>
 
 <script>
@@ -11,13 +12,15 @@ import MainHeader from './Header.vue'
 import Pagination from './Pagination.vue'
 import Content from './Content.vue'
 import Login from './Login.vue'
+import Projects from './Projects.vue'
 
 export default {
     components: {
         Login,
         MainHeader,
         Pagination,
-        Content
+        Content,
+        Projects
     }
 }
 </script>
