@@ -21,8 +21,11 @@
 
 <style lang="postcss" scoped>
     .content {
-        grid-area: content;
-        position: relative;
+      background-image: url('~images/background/mountain_baloon.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      grid-area: content;
+      position: relative;
     }
 
     .content__container {

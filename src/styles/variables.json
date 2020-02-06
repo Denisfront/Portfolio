@@ -1,6 +1,7 @@
 {
   "menu-side-color": "#414c63",
   "text-color-admin": "#414c63",
+  "text-color-admin-opacity3": "rgba(#414c63, .3);",
   "white": "#fff",
   "white-opacity": "rgba(#fff, .3);",
   "white-opacity5": "rgba(#fff, .5);",

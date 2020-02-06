@@ -9,7 +9,7 @@
                         button.approval-btn.approval-btn--cross
 
                 .group-skills__items
-                    skills-list
+                    skills-item
                 label.group-skills__row-skill
                     input(type="text" placeholder="Название навыка").group-skills__name-skill
                     input(type="number" placeholder="0").group-skills__parcent
@@ -17,10 +17,10 @@
 </template>
 
 <script>
-    import SkillsList from './SkillsList.vue'
+    import SkillsItem from './SkillsItem.vue'
 export default {
     components: {
-        SkillsList
+        SkillsItem
     }
 }
 </script>
@@ -117,8 +117,5 @@ export default {
             height: 12px;
             background: svg-load('cross.svg', fill=#bf2929, width=100%, height=100%) center center no-repeat;
         }
-
-
-        
     }
 </style>

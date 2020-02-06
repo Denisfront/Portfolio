@@ -145,12 +145,25 @@
 }
 
 .error {
-    opacity: 0;
     padding: 19px 21px;
     background-color: #cd1515;
     position: absolute;
     color: $white;
     font-size: 14px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        border: 14px solid transparent;
+        width: 0;
+        height: 0;
+        top: -10px;
+        right: 43%;
+        border-bottom-color: #cd1515;
+        border-top-width: 0;
+        border-left-width: 20px;
+        border-right-width: 20px;
+    }
 }
 
 .displaying {
