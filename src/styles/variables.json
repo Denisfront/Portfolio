@@ -26,6 +26,8 @@
   "hover-color-orange":  "#dc9322",
   "bg-color-header": "#3e3e59",
   "color-active-purple": "#383bcf",
+  "color-tags-opacity": "rgba(#283340, .7);",
+  "bg-color-img": "#dee4ed",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-desktop1030": "1030px",
