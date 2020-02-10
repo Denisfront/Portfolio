@@ -2,20 +2,20 @@ section.form
     .form__wrapper
         .container
             h3.form__title.title.title--medium Связаться со мной
-            form(@submit="validateForm"
-                 v-on:submit="submission"
+            form(
                  ).form#form
                 .form__box
                     .form__list
                         label.form__item
                             .form__item-title Введите ваше имя
                             input(v-model="message.name" name="name" type="text",placeholder="Ковальчук Дмитрий").form__input
-                            .error(v-if='errors.length') {{errors[0]}}
+                            //- .error(v-if='errors.length') {{errors[0]}}
+                            .error {{validation.firstError('message.name')}}
                             +icon('user', 'form__input-icon')
                         label.form__item
                             .form__item-title Введите ваш email
                             input(v-model="message.email" name="email" type="email", placeholder="loftshcoll@study.com").form__input
-                            .error(v-if='errors.length') {{errors[1]}}  
+                            //- .error(v-if='errors.length') {{errors[1]}}  
                             +icon('envelope', 'form__input-icon')
                     .form__row
                         label.form__item.form__block--textarea

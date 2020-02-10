@@ -8,9 +8,6 @@
             pagination
           main.content-container 
             router-view
-            about
-            projects
-            reviews
       
 </template>
 
@@ -20,9 +17,6 @@
     components: {
       appHeader: () => import('./components/header'),
       pagination: () => import('./components/pagination'),
-      about: () => import('./components/pages/about'),
-      projects: () => import('./components/pages/projects'),
-      reviews: () => import('./components/pages/reviews')
     }
   }
 
