@@ -13,12 +13,11 @@ section.skillslist
         #skills-component
 
 script(type="text/x-template")#skills-list
-  .skillslist__content
-    ul.skills-graphic
-      li.skills-graphic__item(v-for="skill in skills")
-        skills-item(
-          :skill="skill"
-        )
+  ul.skills-graphic
+    li.skills-graphic__item(v-for="skill in skills")
+      skills-item(
+        :skill="skill"
+      )
 
 script(type="text/x-template")#skills-item
   .skills

@@ -19,14 +19,22 @@
     }
 
     @include tablets {
-        width: 86%;
+        width: 91%;
         margin-bottom: 103px;
+        height: 410px;
     }
 
     @include phones {
         height: 183px;
         width: 100%;
         margin-bottom: 60px;
+    }
+
+    @include mobile {
+        height: 205px;
+        width: 100%;
+        margin-bottom: 75px;
+
     }
 }
 
@@ -91,7 +99,8 @@
     position: relative;
 
     @include desktop {
-        width: 32%;
+        width: 33%;
+
     }
 
     @include tablets {
@@ -110,19 +119,42 @@
         text-align: left;
         align-items: flex-start;
     }
+
+    @include mobile {
+        padding-left: 6%;
+    }
 }
 
 
-.skider__info-desc {
+.slider__info-desc {
     margin-bottom: 40px;
+
+    @include tablets {
+        margin-bottom: 21px;
+    }
+
+    @include mobile {
+        padding-right: 24px;
+        margin-bottom: 44px;
+    }
 }
 
 .slider__tags {
     margin-bottom: 45px;
+
+    @include mobile {
+        margin-bottom: 18px;
+    }
 }
 
 .slider__info-title {
     margin-bottom: 36px;
+
+    @include mobile {
+        margin-bottom: 11px;
+    }
+
+
 }
 
 .slider__buttons {

@@ -11,6 +11,7 @@
 .menu__list {
     display: flex;
     color: $text-color;
+    white-space: nowrap;
 
     @include tablets {
         flex-wrap: wrap;
@@ -21,8 +22,20 @@
 .menu__item {
     margin-right: 61px;
 
+    @include laptop {
+        margin-right: 30px;
+    }
+
     @include tablets {
         margin-bottom: 20px;
+        margin-right: 79px;
+
+    
+    }
+
+    @include mobile {
+        margin-bottom: 26px;
+        margin-right: 83px;
     }
 
     &:last-child {

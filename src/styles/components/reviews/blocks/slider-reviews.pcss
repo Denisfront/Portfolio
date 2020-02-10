@@ -1,6 +1,7 @@
 .slider-reviews {
-    display: flex;
+    /* display: flex; */
     justify-content: space-between;
+    overflow: hidden;
 
     @include phones {
         overflow: hidden;
@@ -11,6 +12,10 @@
     width: 47%;
     padding-left: 11%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+        margin-right: 45px;
+    flex-shrink: 0;
 
     @include tablets {
         padding-left: 5%;
@@ -44,11 +49,16 @@
 
 .slider-reviews__text {
     margin-bottom: 25px;
+
+    @include mobile {
+        margin-bottom: 37px;
+    }
 }
 
 .slider-reviews__author {
     display: flex;
     align-items: center;
+    margin-top: auto;
 }
 
 .slider-reviews__author-avatar {
@@ -80,4 +90,49 @@
 .slider-reviews__author-subtitle {
     color: $text-color-opacity3;
     font-weight: 600;
+}
+
+
+.flickity-viewport {
+    height: 250px;
+}
+
+
+.carousel-cell {
+    width: 47%;
+    padding-left: 11%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+        margin-right: 45px;
+    flex-shrink: 0;
+
+    @include tablets {
+        padding-left: 5%;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        background: svg-load('quote.svg', width=100%, height=100%);
+        opacity: 0.05;
+        width: 75px;
+        height: 79px;
+        background-repeat: no-repeat;
+        left: 0px;
+
+        @include tablets {
+            width: 30px;
+            height: 26px;
+        }
+
+        @include phones {
+            display: none;
+        }
+    }
+
+    @include phones {
+        width: 100%;
+        flex-shrink: 0;
+    }
 }

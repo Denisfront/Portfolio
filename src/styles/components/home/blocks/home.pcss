@@ -4,15 +4,15 @@
     justify-content: space-between;
     height: 100vh;
     min-height: 650px;
-    margin-bottom: 179px;
+    margin-bottom: 166px;
 
     @include desktop {
-        margin-bottom: 405px;
+        margin-bottom: 382px;
     }
 
     @include tablets {
         justify-content: stretch;
-        margin-bottom: 40px;
+        margin-bottom: 0;
     }
 }
 
@@ -22,24 +22,32 @@
 }
 
 .home__header {
-    padding-top: 64px;
+    padding-top: 51px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+    @include laptop {
+        font-size: 15px;
+    }
 
     @include tablets {
         margin-bottom: 181px;
+        padding-top: 55px;
     }
-}
 
-.home__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include mobile {
+        margin-bottom: 134px;
+    }
+
 }
 
 .home__menu {
-    margin: 0 90px;
+    margin: 0 35px;
+
+    @include laptop {
+        margin: 0 19px;
+    }
 }
 
 .home__content {
@@ -50,7 +58,11 @@
 .home__buttons {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+    @include desktop {
+        padding-bottom: 18px;
+    }
 
     @include tablets {
         display: none;

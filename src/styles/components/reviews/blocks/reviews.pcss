@@ -2,16 +2,53 @@
     position: relative;
 }
 
+.container__reviews {
+    position: relative;
+}
+
 .reviews__wrapper {
-    margin: 255px 0 190px 0;
+    margin: 0 0 190px 0;
+    padding-top: 14%;
+
+    @include desktop {
+        padding-top: 16%;
+    }
+
+    @include tablets {
+        padding-top: 27%;
+        margin-bottom: 128px;
+    }
+
+    @include mobile {
+        padding-top: 33%;
+        margin-bottom: 165px;
+    }
 }
 
 .reviews__header {
     display: flex;
+    margin-bottom: 90px;
+
+    @include phones {
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+}
+
+.reviews__btn {
+    display: flex;
+
+
+    @include phones {
+        margin-bottom: 35px;
+        justify-content: center;
+    }
 }
 
 .reviews__content {
-    width: 63%;
+    width: 69%;
 
     @include desktop {
         width: 84%;
@@ -21,10 +58,23 @@
         width: 100%;
     }
 }
-.reviews__title {
-    margin-right: 107px;
 
+.reviews__title {
+    margin-right: 125px;
     @include tablets {
-        margin-right: 35px;
+        margin-right: 25px;
+    }
+
+    @include phones {
+        margin-bottom: 35px;
+        display: flex;
+        justify-content: center;
+    }
+
+    @include mobile {
+        margin-bottom: 35px;
+        display: flex;
+        justify-content: center;
+
     }
 }

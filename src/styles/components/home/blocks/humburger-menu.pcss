@@ -1,9 +1,14 @@
 .humburger-menu{
+    cursor: pointer;
     display: none;
-    margin-left: 93px;
+    margin-left: 108px;
 
     @include tablets {
         display: block;
+    }
+    
+    @include phones {
+        margin-left: 0;
     }
 
     width: 25px;

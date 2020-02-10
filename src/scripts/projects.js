@@ -80,13 +80,14 @@ new Vue({
                     break;
             }
         },
+
         makeInfiniteLoopForCurIndex(value) {
             const worksAmount = this.projects.length - 1;
             if (value > worksAmount) this.currentIndex = 0;
             if (value < 0) this.currentIndex = worksAmount;
         }
     },
-
+    
     watch: {
         currentIndex(value) {
             this.makeInfiniteLoopForCurIndex(value);

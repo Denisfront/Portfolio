@@ -1,18 +1,26 @@
-const btnhumburger = document.querySelector('.humburger-menu');
+const body = document.querySelector('body');
+const btnHumburger = document.querySelector('.humburger-menu');
 const popupWrapper = document.querySelector('.popup__wrapper');
-const hiddenBlockUserinfo = document.querySelector('.user-info');
+const popup = document.querySelector('.popup');
+const hiddenBlockHomeContent = document.querySelector('.home__content');
 const hiddenBlockHomelinks = document.querySelector('.home__links');
-const crossPopupbtn =document.querySelector('.popup__btn');
+const crossPopupbtn = document.querySelector('.popup__btn');
 
-btnhumburger.addEventListener('click', e=> {
-   console.log('ура');
+btnHumburger.addEventListener('click', e => {
+   body.classList.add('body__hidden');
    popupWrapper.style.right = 0;
-   hiddenBlockUserinfo.style.display = "none";
+   hiddenBlockHomeContent.style.display = "none";
    hiddenBlockHomelinks.style.display = "none";
 });
+popup.addEventListener('click', e => {
+   if (e.target === popup) {
+      crossPopupbtn.click();
+   }  
+});
 
-crossPopupbtn.addEventListener('click', e=> {
+crossPopupbtn.addEventListener('click', e => {
+   body.classList.remove('body__hidden');
    popupWrapper.style.right = -100 + "%";
-   hiddenBlockUserinfo.style.display = "block";
+   hiddenBlockHomeContent.style.display = "block";
    hiddenBlockHomelinks.style.display = "flex";
 });

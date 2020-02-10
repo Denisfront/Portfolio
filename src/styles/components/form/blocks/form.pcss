@@ -3,15 +3,32 @@
 
     @include tablets {
         text-align: center;
+        margin-bottom: 51px;
     }
 
     @include phones {
         margin-bottom: 35px;
     }
+
+    @include mobile {
+        margin-bottom: 56px;
+    }
 }
 
 .form {
     position: relative;
+}
+
+.form__wrapper {
+    padding-bottom: 125px;
+
+    @include desktop {
+        padding-bottom: 163px;
+    }
+
+    @include tablets {
+        padding-bottom: 120px;
+    }
 }
 
 .form__list {
@@ -25,6 +42,10 @@
 
 .form__row {
     margin-bottom: 84px;
+
+    @include tablets {
+        margin-bottom: 65px;
+    }
 }
 
 .form__btn {
@@ -80,9 +101,14 @@
     color: $text-color;
     position: relative;
     background-color: transparent;
+    position: relative;
 
     &:focus {
         border-color: $hover-color-purple;
+    }
+
+    @include mobile {
+        margin-bottom: 19px;
     }
 }
 
@@ -92,7 +118,11 @@
     left: 0;
     top: 45%;
     position: absolute;
-    fill: $text-color-opacity-form
+    fill: $text-color-opacity-form;
+
+    @include tablets {
+        display: none;
+    }
 }
 
 .form__input--textarea {
@@ -112,4 +142,30 @@
         width: 100%;
         border-bottom: 1px solid $text-color;
     }
+}
+
+.error {
+    padding: 19px 21px;
+    background-color: #cd1515;
+    position: absolute;
+    color: $white;
+    font-size: 14px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        border: 14px solid transparent;
+        width: 0;
+        height: 0;
+        top: -10px;
+        right: 43%;
+        border-bottom-color: #cd1515;
+        border-top-width: 0;
+        border-left-width: 20px;
+        border-right-width: 20px;
+    }
+}
+
+.displaying {
+    opacity: 1;
 }

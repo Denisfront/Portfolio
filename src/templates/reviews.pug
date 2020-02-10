@@ -1,13 +1,15 @@
 section.reviews
     .reviews__wrapper
-        .container
+        .container.container__reviews
             .reviews__header
                 .reviews__title.title.title--medium Что обо мне говорят
-                a.direction-btn.direction-btn--circle
-                a.direction-btn.direction-btn--circle
-            .reviews__content
-                .slider-reviews
-                    .slider-reviews__item
+                .reviews__btn
+                    button(@click="previous()").direction-btn.direction-btn--circle.direction-btn--prev
+                    button(@click="next()").direction-btn.direction-btn--circle         
+            .reviews__content#slider-reviews
+            
+                flickity(ref="flickity" :options="flickityOptions").slider-reviews
+                    .carousel-cell
                         .slider-reviews__text.text
                             | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                         .slider-reviews__author
@@ -17,7 +19,7 @@ section.reviews
                             .slider-reviews__author-desc
                                 .slider-reviews__author-username Ковальчук Дмитрий
                                 .slider-reviews__author-subtitle Основатель Loftschool
-                    .slider-reviews__item
+                    .carousel-cell
                         .slider-reviews__text.text
                             | Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
                         .slider-reviews__author
@@ -27,6 +29,29 @@ section.reviews
                             .slider-reviews__author-desc
                                 .slider-reviews__author-username Владимер Сабанцев
                                 .slider-reviews__author-subtitle Преподаватель
+                    .carousel-cell
+                        .slider-reviews__text.text
+                            | Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                        .slider-reviews__author
+                            .slider-reviews__author-avatar
+                                .avatar.avatar--tiny
+                                    +image('content/vis.jpg', 'avatar__userpic')
+                            .slider-reviews__author-desc
+                                .slider-reviews__author-username Владимер Сабанцев
+                                .slider-reviews__author-subtitle Преподаватель
+                    .carousel-cell
+                        .slider-reviews__text.text
+                            | Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                        .slider-reviews__author
+                            .slider-reviews__author-avatar
+                                .avatar.avatar--tiny
+                                    +image('content/vis.jpg', 'avatar__userpic')
+                            .slider-reviews__author-desc
+                                .slider-reviews__author-username Владимер Сабанцев
+                                .slider-reviews__author-subtitle Преподаватель
+                //- .reviews__btn
+                //-         button(@click="previous()").direction-btn.direction-btn--circle
+                //-         button(@click="next()").direction-btn.direction-btn--circle            
 
 
 

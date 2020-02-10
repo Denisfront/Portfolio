@@ -9,43 +9,54 @@ html(lang="ru")
     title Portfolio | main page
   body
     .wrapper
-      .parallax
-        //- +image(`${imgSpeed[0]}`,`${imgSpeed[1]}`, 'section background')
-        - 
-          var imagesNumberspeed = [
-            ["parallax/sky.jpg",        ["parallax__img"],   ["0.1"]],
-            ["parallax/mountain.png",   ["parallax__img"],   ["0.15"]],
-            ["parallax/baloon.png",     ["parallax__img"],   ["0.18"]],
-            ["parallax/cloud.png",      ["parallax__img"],   ["0.21"]],
-            ["parallax/man.png",        ["parallax__img"],   ["0.25"]],
-            ["parallax/mountain1.png",  ["parallax__img"],   ["0.26"]],
-            ["parallax/white.png",      ["parallax__img"],   ["0.27"]]
-          ];
-          
-        each imgSpeed in imagesNumberspeed
-          .parallax__layer(data-speed=`${imgSpeed[2]}`)
-            +image(`${imgSpeed[0]}`,`${imgSpeed[1]}`, 'section background')
-        include ./templates/home
-        include ./templates/about
       .maincontent
-        include ./templates/skillslist
-        include ./templates/projects
-        .parallax-budda
-          .parallax-budda__layer(data-speedbudda="0.1")
-            +image('parallax-budda/budda-sky.jpg', 'parallax__img', 'фон секции') 
-          .parallax-budda__layer(data-speedbudda="0.10")
-            +image('parallax-budda/back-budda-sky.png', 'parallax__img', 'фон секции') 
-          .parallax-budda__layer(data-speedbudda="0.15")
-            +image('parallax-budda/budda-mountain.png', 'parallax__img', 'фон секции') 
-          .parallax-budda__layer(data-speedbudda="0.21")
-            +image('parallax-budda/buddha.png', 'parallax__img', 'фон секции') 
-          .parallax-budda__layer(data-speedbudda="0.26")
-            +image('parallax-budda/cloud-1.png', 'parallax__img', 'фон секции') 
-          .parallax-budda__layer(data-speedbudda="0.25")
-            +image('parallax-budda/cloud-2.png', 'parallax__img', 'фон секции')
-          .parallax-budda__layer(data-speedbudda="0.27")
-            +image('parallax-budda/cloud-3.png', 'parallax__img', 'фон секции')
+        .welcome-section
+          picture.bg-tablets
+            source(srcset=require('./images/background/mountain.jpg') media="(max-width: 768px)")
+            img(srcset=require('images/background/budda.jpg')).bg-tablets__img
+          section.parallax
+            - 
+              var path1ToTheImg = [
+                ["parallax/sky.jpg", "0.2"],
+                ["parallax/mountain.png", "0.10"],
+                ["parallax/baloon.png", "0.25"],
+                ["parallax/cloud.png", "0.28"],
+                ["parallax/man.png", "0.32"],
+                ["parallax/mountain1.png", "0.33"],
+                ["parallax/white.png", "0.35"]
+              ];
+            
+            each Path1 in path1ToTheImg
+              .parallax__layer(data-speed=`${Path1[1]}`)
+                +image(`${Path1[0]}`,'parallax__img', 'section background')
+          include ./templates/home
+          include ./templates/about
+        .middle-section
+          include ./templates/skillslist
+          include ./templates/projects
+        .last-section
+          picture.bg-tablets
+            source(srcset=require('./images/background/budda.jpg') media="(max-width: 768px)")
+            img(srcset=require('images/background/budda.jpg')).bg-tablets__img
+          section.parallax-budda
+            -
+              var path2ToTheImg = [
+                ["parallax-budda/budda-sky.jpg", "0.0"],
+                ["parallax-budda/back-budda-sky.png", "0.0"],
+                ["parallax-budda/budda-mountain.png", "0.2"],
+                ["parallax-budda/buddha.png", "0.10"],
+                ["parallax-budda/cloud-1.png", "0.20"],
+                ["parallax-budda/cloud-2.png", "0.23"],
+                ["parallax-budda/cloud-3.png", "0.25"]
+              ];
+              
+            each path2 in path2ToTheImg
+              .parallax-budda__layer(data-speedbudda=`${path2[1]}`)
+                +image(`${path2[0]}`, 'parallax__img', 'section background')
           include ./templates/reviews
           include ./templates/common/form
         include ./templates/footer
+
+
+  
     
