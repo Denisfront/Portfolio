@@ -36,7 +36,7 @@ window.addEventListener('scroll', e => {
     const wScroll = window.pageYOffset;
     const parallaxRect = parallaxBudda.getBoundingClientRect();
     const parallaxPos = parallaxRect.top;
-    console.log(parallaxPos);
+    // console.log(parallaxPos);
     if (parallaxPos <= 135) {
         moveLayersBuddaDependsOnScroll(wScroll);
     }

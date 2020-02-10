@@ -3,7 +3,9 @@ section.reviews
         .container.container__reviews
             .reviews__header
                 .reviews__title.title.title--medium Что обо мне говорят
-                
+                .reviews__btn
+                    button(@click="previous()").direction-btn.direction-btn--circle.direction-btn--prev
+                    button(@click="next()").direction-btn.direction-btn--circle         
             .reviews__content#slider-reviews
             
                 flickity(ref="flickity" :options="flickityOptions").slider-reviews
@@ -47,9 +49,9 @@ section.reviews
                             .slider-reviews__author-desc
                                 .slider-reviews__author-username Владимер Сабанцев
                                 .slider-reviews__author-subtitle Преподаватель
-                .reviews__btn
-                        button(@click="previous()").direction-btn.direction-btn--circle
-                        button(@click="next()").direction-btn.direction-btn--circle            
+                //- .reviews__btn
+                //-         button(@click="previous()").direction-btn.direction-btn--circle
+                //-         button(@click="next()").direction-btn.direction-btn--circle            
 
 
 
