@@ -1,14 +1,14 @@
 <template lang="pug">
     .group-skills
-        form.group-skills__form
+        form(@submit.prevent="addNewCategories").group-skills__form
             .group-skills__wrap
                 label.group-skills__row
-                    input(type="text" placeholder="Название новой группы").group-skills__name-group
+                    input(type="text" placeholder="Название новой группы" v-model="title").group-skills__name-group
                     .group-skills__btn
                         button.approval-btn.approval-btn--tick
-                        button.approval-btn.approval-btn--cross
+                        button(type="reset").approval-btn.approval-btn--cross
 
-                .group-skills__items
+                .group-skills__items(v-for="category in categories")
                     skills-item
                 label.group-skills__row-skill
                     input(type="text" placeholder="Название навыка").group-skills__name-skill
@@ -17,10 +17,38 @@
 </template>
 
 <script>
-
+    import skillsItem from './skillsItem';
+    import {mapActions, mapState} from 'vuex';
 export default {
+
+    data: () => ({
+        title: ''
+    }),
+    
     components: {
-        skillsItem: () => import('./skillsItem.vue')
+        skillsItem
+    },
+    created() {
+        this.fetchCategories();
+    },
+    computed: {
+        ...mapState('categories',{
+           categories: state => state.categories
+        })
+    },
+    methods: {
+        ...mapActions('categories', ['addCategory', 'fetchCategories']),
+        async addNewCategories() {
+             await this.addCategory(this.title)
+                .catch(error => {
+                    alert(error.message);
+                })
+            // try {
+            //     await this.addCategory(this.title)
+            // } catch (error) {
+            //     alert(error.message);
+            // }
+        },
     }
 }
 </script>

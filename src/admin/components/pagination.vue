@@ -3,11 +3,11 @@
       .container
         ul.pagination
           li.pagination__item
-            a(href="#").pagination__link.active Обо мне 
+            a(href="#/").pagination__link.active Обо мне  
           li.pagination__item 
-            a(href="#").pagination__link Работы
+            a(href="#/projects").pagination__link Работы
           li.pagination__item 
-            a(href="#").pagination__link Отзывы
+            a(href="#/reviews").pagination__link Отзывы
 </template>
 
 <script>

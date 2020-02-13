@@ -12,11 +12,12 @@
 </template>
 
 <script>
-
+  import appHeader from './components/header';
+  import pagination from './components/pagination';
   export default {
     components: {
-      appHeader: () => import('./components/header'),
-      pagination: () => import('./components/pagination'),
+      appHeader,
+      pagination
     }
   }
 

@@ -11,9 +11,11 @@
 </template>
 
 <script>
+  import groupSkills from '../groupSkills';
+
     export default {
       components: {
-        groupSkills: () => import('../groupSkills.vue')
+        groupSkills
       }
     }
 </script>
