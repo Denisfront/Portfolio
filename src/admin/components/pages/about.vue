@@ -6,8 +6,7 @@
             button.content-title__btn.btn Добавить группу
           .content__items
             group-skills
-            group-skills
-            group-skills
+           
 </template>
 
 <script>
@@ -16,8 +15,10 @@
     export default {
       components: {
         groupSkills
-      }
+      },    
     }
+    
+    
 </script>
 
 <style lang="postcss" scoped>

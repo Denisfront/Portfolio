@@ -5,35 +5,36 @@ export default {
     },
 
     mutations: {
-        SET_CATEGORY: (state, data) => state.categories = data
+        SET_CATEGORIES: (state, data) => (state.categories = data),
+        ADD_CATEGORY: (state, category) => state.categories.push(category),
+        ADD_SKILL: (state, newSkill) => {
+            state.categories = state.categories.map(category => {
+                if(category.id === newSkill.category) {
+                    category.skills.push(newSkill);
+                }
+                return category;
+            })
+        }
     },
     actions: {
-        async addCategory(store, title) {  
+        async addCategory({commit}, title) {  
 
-            const response = await this.$axios.post('/categories', { title })   
-            .catch((error) => {
-                error.response.data.error || error.response.data.message
-                // console.log(error.message);
-            });
-        // try {
-        //     const response = await this.$axios.post('/categories', { title })   
-        // } catch (error) {
-        //     throw new Error ( 
-        //         error.response.data.error || error.response.data.message  
-        //     );
-           
-        // }
-
-
+            const {data} = await this.$axios.post('/categories', { title })   
+            commit('ADD_CATEGORY', data)
+            // .catch((error) => {
+            //     throw new Error (
+            //         error.response.data.error || error.response.data.message
+            //     );
+            // });
         },
         async fetchCategories({ commit }) {
             try {
              const { data } = await this.$axios.get('/categories/256') 
-             commit("SET_CATEGORY", data);
+             commit("SET_CATEGORIES", data);
              console.log(data); 
             } catch (error) {
                 
             }
-        } 
+        },
     }
 };
