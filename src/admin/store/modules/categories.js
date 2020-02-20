@@ -15,6 +15,21 @@ export default {
                 return category;
             })
         },
+        REMOVE_CATEGORY: (state, deletedCategory) => {
+            const removeCategoryInReviews = categories => {
+                categories = categories.filter(
+                    categories => categories.id !== deletedCategory.id
+                );
+            };
+
+            const findCategory = categories => {
+                if(categories.id === deletedCategory.categories) {
+                    removeCategoryInReviews(categories);
+                }
+                return categories;
+            };
+            state.categories = state.categories.map(findCategory)
+        },
         REMOVE_SKILL: (state, deletedSkill) => {
             const removeSkillInCategory = category => {
                 category.skills = category.skills.filter(
@@ -66,10 +81,11 @@ export default {
                 
             }
         },
-        async removeCaregorirs({ commit , categories}) {
-             const { data } = await this.$axios.delete(`/categories/${categories.id}`) 
+        async removeCaregorirs({ commit }, category) {
+             const { data } = await this.$axios.delete(`/categories/${category.id}`, category) 
+             console.log('category');
              commit("REMOVE_CATEGORY", category);
-             console.log('helo');
+             
         },
     }
 };

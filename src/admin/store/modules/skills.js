@@ -15,6 +15,8 @@ export default {
             error.response.data.error || error.response.data.message
           });
           commit('categories/REMOVE_SKILL', skill, {root: true});
+          console.log(skill);
+          
         },
         async editSkill({commit}, skill) {
           const { data } = await this.$axios.post(`/skills/${skill.id}`, skill)

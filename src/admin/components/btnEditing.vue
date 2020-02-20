@@ -1,14 +1,31 @@
 <template lang="pug">
     .btn-editing
         button.btn-editing.btn-editing--remove Править
-        button.btn-editing.btn-editing--change Удалить
+        button(
+            type="button"
+            @click="removeExistedReview"
+        ).btn-editing.btn-editing--change Удалить
+        
 
 </template>
 
 <script>
-    
+      import { mapActions} from 'vuex';
 export default {
+    props:{
+        review: {
+            type: Object,
+            default: () => {},
+            required: true
+        }
+    },
 
+    methods: {
+        ...mapActions('reviews', ['removeReview']),
+        async removeExistedReview() {
+           await this.removeReview(this.review);
+        },
+    }
 }
 </script>
 

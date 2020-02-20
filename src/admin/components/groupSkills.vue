@@ -13,14 +13,7 @@
                 skills-list(
                     :category="category"
                 )
-                
-            //- .categories__list
-            //-     skills-item
-            //- .categories__add-skill
-            //-     form.skills-form
-            //-         input(type="text" placeholder="Название навыка" ).skills-form__name-skill
-            //-         input(type="number" placeholder="0" ).skills-form__percent
-            //-         button(type="submit").btn
+
 
 </template>
 
@@ -30,10 +23,9 @@
 export default {
     data() {
         return {
-        title: '',
-        displayName: false,
-
-    }
+            title: '',
+            displayName: false,
+        }
     },
 
     components: {
@@ -58,7 +50,10 @@ export default {
                 })
         },
         async removeExistedCaregorirs() {
-            await this.removeCaregorirs(this.categories.category)
+            // await this.removeCaregorirs(this.category)
+           console.log(this.categories.id);
+           
+            
         }
     }
 }
