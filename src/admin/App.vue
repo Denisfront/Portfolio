@@ -58,7 +58,6 @@
     background-image: url('~images/background/mountain_baloon.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
     flex: 1;
     padding-top: 60px;
 

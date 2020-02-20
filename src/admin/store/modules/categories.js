@@ -14,18 +14,48 @@ export default {
                 }
                 return category;
             })
+        },
+        REMOVE_SKILL: (state, deletedSkill) => {
+            const removeSkillInCategory = category => {
+                category.skills = category.skills.filter(
+                    skill => skill.id !== deletedSkill.id
+                );
+            };
+
+            const findCategory = category => {
+                if(category.id === deletedSkill.category) {
+                    removeSkillInCategory(category);
+                }
+                return category;
+            };
+            state.categories = state.categories.map(findCategory)
+        },
+        EDIT_SKILL: (state, editedSkill) => {
+            const editSkillInCategory = category => {
+                category.skills = category.skills.map( skill => {
+                    return skill.id === editedSkill.id ? editedSkill : skill
+                });
+            };
+
+            const findCategory = category => {
+                if(category.id === editedSkill.category) {
+                    editSkillInCategory(category);
+                }
+                return category;
+            };
+            state.categories = state.categories.map(findCategory)
         }
     },
     actions: {
         async addCategory({commit}, title) {  
 
             const {data} = await this.$axios.post('/categories', { title })   
+            .catch((error) => {
+                throw new Error (
+                    error.response.data.error || error.response.data.message
+                );
+            })
             commit('ADD_CATEGORY', data)
-            // .catch((error) => {
-            //     throw new Error (
-            //         error.response.data.error || error.response.data.message
-            //     );
-            // });
         },
         async fetchCategories({ commit }) {
             try {
@@ -35,6 +65,11 @@ export default {
             } catch (error) {
                 
             }
+        },
+        async removeCaregorirs({ commit , categories}) {
+             const { data } = await this.$axios.delete(`/categories/${categories.id}`) 
+             commit("REMOVE_CATEGORY", category);
+             console.log('helo');
         },
     }
 };

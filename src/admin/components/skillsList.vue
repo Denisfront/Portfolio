@@ -1,34 +1,40 @@
 <template lang="pug">
-    div
+    div 
         .categories__list
             table.skills-item
-                tr(v-for="skill in category.skills").skills-item__row
-                    td {{skill.title}}
-                    td {{skill.percent}}
-                    td
-                        button(type="button").approval-btn.approval-btn--pencil
-                        button(type="button").approval-btn.approval-btn--trash
-                tr.skills-item__row
-                    td 
-                        input(type="text")
-                    td 
-                        input(type="number")
-                    td
-                        button(type="button").approval-btn.approval-btn--tick
-                        button(type="button").approval-btn.approval-btn--cross
+                skill-item(
+                    v-for="skill in category.skills"
+                    :key="skill.id"
+                    :skill="skill"
+                )
+      
         .categories__add-skill
-            form(@submit.prevent="addNewSkill").skills-form
-                input(type="text" placeholder="Название навыка" v-model="skill.title").skills-form__name-skill
+            form(
+                @submit.prevent="addNewSkill"
+                :class={blocked: loading}
+                ).skills-form
+                input(type="text" placeholder="Новый навык" v-model="skill.title").skills-form__name-skill
                 input(type="number" placeholder="0" v-model="skill.percent").skills-form__percent
-                button(type="submit").btn
+                button(
+                    type="submit"
+                    :disabled="loading"
+                    ).btn
 
 </template>
 
 <script>
 import { mapActions } from 'vuex';
+import skillItem from './skillItem'
     export default {
+
+        components: {
+            skillItem
+        },
+
         data() {
             return {
+                loading: false,
+
                 skill: {
                     title: '',
                     percent: 0,
@@ -47,6 +53,9 @@ import { mapActions } from 'vuex';
             ...mapActions('skills', ['addSkill']),
             async addNewSkill() {
                await this.addSkill(this.skill)
+                this.skill.title = '';
+                this.skill.percent = '';
+
             }
         }
     };
@@ -59,37 +68,7 @@ import { mapActions } from 'vuex';
         outline: none;
     }
 
-    .approval-btn {
-        margin-right: 19px;
-
-        &:last-child {
-            margin-right: 0;
-        }
-        
-        &--tick {
-            width: 15px;
-            height: 12px;
-            background: svg-load('tick.svg', fill=green, width=100%, height=100%) center center no-repeat;
-        }
-
-        &--cross {
-            width: 14px;
-            height: 12px;
-            background: svg-load('cross.svg', fill=#bf2929, width=100%, height=100%) center center no-repeat;
-        }
-
-        &--pencil {
-            width: 16px;
-            height: 15px;
-            background: svg-load('pencil.svg',fill="$text-color-admin", width=100%, height=100%) center center no-repeat;
-        }
-
-        &--trash {
-            width: 13px;
-            height: 15px;
-            background: svg-load('trash.svg', fill="$text-color-admin", width=100%, height=100%) center center no-repeat;
-        }
-    }
+    
     .categories__list {
         min-height: 240px;
     }
@@ -135,23 +114,10 @@ import { mapActions } from 'vuex';
         }
     }
 
-    .approval-btn {
-        margin-right: 19px;
-
-        &:last-child {
-            margin-right: 0;
-        }
-        
-        &--tick {
-            width: 15px;
-            height: 12px;
-            background: svg-load('tick.svg', fill=green, width=100%, height=100%) center center no-repeat;
-        }
-
-        &--cross {
-            width: 14px;
-            height: 12px;
-            background: svg-load('cross.svg', fill=#bf2929, width=100%, height=100%) center center no-repeat;
-        }
+    .skills-form.blocked {
+        opacity: 0.5;
+        filter: grayscale(100%);
+        pointer-events: none;
+        user-select: none;
     }
 </style>

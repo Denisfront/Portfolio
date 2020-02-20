@@ -3,17 +3,11 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-const routes = [
+export default [
     {
         path: '/',
         component:  () => import('@/components/pages/about.vue')
     },
-
-    {
-        path: '/login',
-        component:  () => import('@/components/pages/login.vue')
-    },
-
 
     {
         path: '/projects',
@@ -23,11 +17,14 @@ const routes = [
     {
         path: '/reviews',
         component:  () => import('@/components/pages/reviews.vue')
+    },
+
+    {
+        path: '/login',
+        component:  () => import('@/components/pages/login.vue'),
+
+        meta: {
+            public: true
+        }
     }
-
 ];
-
-
-export default new VueRouter({ 
-    routes
- });

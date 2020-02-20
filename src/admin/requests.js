@@ -10,5 +10,26 @@ const requests = axios.create({
     }
 });
 
+
+requests.interceptors.response.use(
+    response => response,
+
+    async error => {
+        const originalRequest = error.config;
+
+        if(error.response.status === 401) {
+           const response = await requests.post('/refreshToken');
+           const token = response.data.token;
+
+           localStorage.setItem('token', token);
+           requests.defaults.headers['Authorization'] = `Bearee ${token}`;
+           originalRequest.headers['Authorization'] = `Bearee ${token}`;
+           return axios(originalRequest);
+
+        }
+
+        return Promise.reject(error);
+    }
+);
 export default requests;
 

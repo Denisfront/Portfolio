@@ -1,17 +1,19 @@
 <template lang="pug">  
     .group-skills
-        .categories(v-for="category in categories" :key="category.id")
-            form(@submit.prevent="addNewCategories").categories-form
+        .categories(v-for="(category, index) in categories" :key="category.id")
+            form(@submit.prevent="addNewCategories(index)").categories-form
                 .categories-form__wrap
                     label.categories-form__row
-                        input(v-if='displayName === false' type="text" placeholder="Название новой группы" v-model="groupTitle").categories-form__name
-                        div(v-else) {{category.category}}
+                        input(  type="text" 
+                                placeholder="Название новой группы" 
+                                v-model="title").categories-form__name
                     .buttons
                         button.approval-btn.approval-btn--tick
-                        button(type="reset").approval-btn.approval-btn--cross
+                        button(type="button" @click="removeExistedCaregorirs").approval-btn.approval-btn--cross
                 skills-list(
                     :category="category"
                 )
+                
             //- .categories__list
             //-     skills-item
             //- .categories__add-skill
@@ -28,7 +30,7 @@
 export default {
     data() {
         return {
-        groupTitle: '',
+        title: '',
         displayName: false,
 
     }
@@ -46,18 +48,18 @@ export default {
         })
     },
     methods: {
-        ...mapActions('categories', ['addCategory', 'fetchCategories']),
-        async addNewCategories() {
+        ...mapActions('categories', ['addCategory', 'fetchCategories', 'removeCaregorirs']),
+        async addNewCategories(categoryIndex) {
+            console.log(categoryIndex)
+            this.categories[categoryIndex]
              await this.addCategory(this.title)
                 .catch(error => {
                     alert(error.message);
                 })
-            // try {
-            //     await this.addCategory(this.title)
-            // } catch (error) {
-            //     alert(error.message);
-            // }
         },
+        async removeExistedCaregorirs() {
+            await this.removeCaregorirs(this.categories.category)
+        }
     }
 }
 </script>

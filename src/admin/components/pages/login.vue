@@ -19,6 +19,7 @@
 <script>
 
 import axios from 'axios';
+import $axios from "../../requests";
 
 export default {
     template: '#form-login',
@@ -32,22 +33,16 @@ export default {
        
     },
     methods: {
-        login() {
-            
-        const baseUrl = 'https://webdev-api.loftschool.com/';
-        const token = localStorage.getItem('token') || '' ;
-        axios.defaults.baseURL = baseUrl;
-   
-
-            axios.post('/login', this.user)
-                .then( response => {
-                const token = response.data.token;
-                axios.defaults.headers['Authorization'] = `Bearer ${token}`;
-                localStorage.setItem('token', token);
-            })
-            .catch(error =>{
-                console.log(error.response.data);
-            })
+        async login() {
+            const response = await $axios.post('/login', this.user);
+            const token = response.data.token;
+            localStorage.setItem('token', token);
+            $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
+            this.$router.replace("/");
+    
+        //     .catch(error =>{
+        //         console.log(error.response.data);
+        //     })
         }
     }
 }
