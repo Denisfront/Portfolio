@@ -3,16 +3,24 @@
         .projects-item__preview
             .projects-preview
                 .preview-preview__img
-                     img(src="~images/slider-projects/slider-1.jpg")
-                tags
+                     img(:src="baseURL + pathToTheImage")
+                tags(
+                    :tags="project.techs"
+                )
         .projects-item__desc
             .projects-desc
-                .projects-desc__titile Сайт школы образования
+                .projects-desc__titile {{project.title}}
                 .projects-desc__text 
-                    | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                a(href="#").projects-desc__link http://loftschool.ru
+                    | {{project.description}}
+                a(
+                :href="project.link"
+                target="_blank"
+                ).projects-desc__link {{project.link}}
                 .projects-desc__btn
-                    btn-editing
+                    btn-editing(
+                        @removeExistedProject="removeExistedProject"
+                        :project="project"
+                    )
 
                     
 </template>
@@ -21,9 +29,28 @@
     import tags from './tags'
     import btnEditing from './btnEditing'
 export default {
+    data() {
+        return {
+            baseURL: 'https://webdev-api.loftschool.com/',
+            pathToTheImage: this.project.photo
+        }
+    },
+    props: {
+        project: {
+            type: Object,
+            default: () => {},
+            required: true
+        }      
+    },
     components: {
         tags,
         btnEditing
+    },
+    methods: {
+        async removeExistedProject(project) {
+            console.log(project);
+            
+        }
     }
 }
 </script>
@@ -38,7 +65,7 @@ export default {
         position: relative;
         margin-left: 29px;
 
-        &:hover:after {
+        /* &:hover:after {
             content: '';
             position: absolute;
             top: 0;
@@ -47,7 +74,7 @@ export default {
             right: 0;
             background-color: $white-opacity7;
             box-shadow: none;
-        }
+        } */
      }
 
     .projects-item__preview {

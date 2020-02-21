@@ -6,16 +6,19 @@
             button.content-title__btn.btn Добавить группу
           .content__items
             group-skills
-            group-skills
-            group-skills
+           
 </template>
 
 <script>
+  import groupSkills from '../groupSkills';
+
     export default {
       components: {
-        groupSkills: () => import('../groupSkills.vue')
-      }
+        groupSkills
+      },    
     }
+    
+    
 </script>
 
 <style lang="postcss" scoped>

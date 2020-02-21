@@ -21,13 +21,12 @@ script(type="text/x-template")#skills-list
 
 script(type="text/x-template")#skills-item
   .skills
-    .skills__title.title.title--font {{skill.skillsGroup}}
+    .skills__title.title.title--font {{skill.category}}
     .skills__content 
       ul.skills-ltems
-        li.skills-items__item(v-for="(skillPercent, skillName) in skill.skills")
+        li.skills-items__item(v-for="(skillItem in skill.skills")
           skill(
-            :skillName="skillName"
-            :skillPercent="skillPercent"
+            :skill="skillItem"
           )
 
 script(type="text/x-template")#skill
@@ -54,5 +53,5 @@ script(type="text/x-template")#skill
       linearGradient#gradient
         stop(offset="0%" stop-color="#9300e8")
         stop(offset="100%" stop-color="#4a00ed")                           
-    .skill__title.subtitle {{skillName}}
+    .skill__title.subtitle {{skill.title}}
 

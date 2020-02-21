@@ -4,25 +4,62 @@
             .reviews-item__author
                 .reviews-item__author-avatar
                     .avatar.avatar--tiny
-                        img(src="~images/content/dmk.jpg").avatar__userpic
+                        img(:src="baseURL + pathToTheImage"
+                        ).avatar__userpic
                 .reviews__author-desc
-                    .reviews-item__author-username Ковальчук Дмитрий
-                    .reviews-item__author-subtitle Основатель Loftshcool
+                    .reviews-item__author-username {{review.author}}
+                    .reviews-item__author-subtitle {{review.occ}}
             .reviews-desc
-                .reviews-desc__text 
-                    | Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах.
+                .reviews-desc__text {{review.text}}
                 .reviews-desc__btn
-                    btn-editing
+                    .btn-editing
+                        button(
+                            type="button"
+                            @click="editExistedReview"
+                        ).btn-editing.btn-editing--remove Править
+                        button(
+                            type="button"
+                            @click="removeExistedReview"
+                        ).btn-editing.btn-editing--change Удалить
+                    //- btn-editing(
+                    //-     :review="review"
+                    //- )
                   
 </template>
 
 <script>
-      import btnEditing from './btnEditing'
+        import btnEditing from './btnEditing';
+        import { mapActions } from 'vuex';
       
     export default {
+        data() {
+            return {
+                baseURL: 'https://webdev-api.loftschool.com/',
+                pathToTheImage: this.review.photo
+            }    
+        },
+        props:{
+            review: {
+                type: Object,
+                default: () => {},
+                required: true
+            }
+        },
         components: {
             btnEditing
+        },
+        methods: {
+            ...mapActions('reviews', ['removeReviews', 'editReview']),
+            async removeExistedReview() {
+                await this.removeReviews(this.review)
+                .catch()
+            },
+            async editExistedReview() {
+                this.$emit('editExistedReview', this.review);
+                await this.editReview(this.review)
+            }
         }
+
 }
 </script>
 
@@ -35,7 +72,7 @@
         margin-bottom: 30px;
         position: relative;
         margin-left: 29px;
-
+/* 
         &:hover:after {
             content: '';
             position: absolute;
@@ -45,7 +82,7 @@
             right: 0;
             background-color: $white-opacity7;
             box-shadow: none;
-        }
+        } */
      }
 
     .reviews-item__preview {
@@ -113,5 +150,45 @@
     color: $text-color-opacity3;
     font-weight: 600;
 }
+
+.btn-editing {
+        background-color: $white;
+        font-weight: 600;
+        color: $text-color-admin-opacity05;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+      
+
+        &--remove {
+            padding-right: 30px;
+              position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                right: 0;
+                width: 17px;
+                height: 17px;
+                background: svg-load('pencil.svg', fill="$color-active-purple", width=100%, height=100%) center center no-repeat;
+            }
+           
+        }
+
+        &--change {
+            padding-right: 30px;
+              position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                right: 0;
+                width: 15px;
+                height: 15px;
+                background: svg-load('cross.svg', fill="red", width=100%, height=100%) center center no-repeat;
+            }
+           
+        }
+     }
      
 </style>

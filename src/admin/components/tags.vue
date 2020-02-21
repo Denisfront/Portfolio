@@ -6,9 +6,14 @@
 </template>
 
 <script>
-export default {
-
-}
+ 
+    export default {
+        props: {
+            type: Object,
+            default: () => {},
+            required: true
+        },
+    }
 </script>
 
 <style lang="postcss" scoped>
@@ -20,7 +25,7 @@ export default {
     position: absolute;
     bottom: 10px;
     right: 0;
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 .tags__item {

@@ -9,12 +9,19 @@
                   .user__username.subtitle Санников Денис
               .header__slogan Панель разработчика 
           .header__right
-              a(href="#").btn Выйти
+              a(@click="logoutUser").btn Выйти
 </template>
 
 <script>
+import { mapActions } from 'vuex';
     export default {
-
+      methods: {
+        ...mapActions('user', ['logout']),
+        logoutUser() {
+          this.logout();
+          this.$router.replace('/login'); 
+        }
+      }
     };
 </script>
 

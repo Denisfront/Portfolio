@@ -13,9 +13,17 @@
 // setProgress(35);
 
 import vue from "vue";
+import axios from "axios";
+
+const $axios = axios.create({
+    baseURL: 'https://webdev-api.loftschool.com/'
+});
+
 const skill = {
     template: "#skill",
-    props: ["skillName", "skillPercent"],
+    props: {
+        skill: Object
+    },
     methods: {
         drawColoredCircle() {
             const circle = this.$refs["color-circle"];
@@ -23,7 +31,7 @@ const skill = {
                 getComputedStyle(circle).getPropertyValue("stroke-dasharray")
             );
             console.log(dashArray);
-            const percent = (dashArray / 100) * (100 - this.skillPercent);
+            const percent = (dashArray / 100) * (100 - this.skill.percent);
 
             circle.style.strokeDashoffset = percent;
         }
@@ -53,8 +61,8 @@ new vue({
         skillsItem
     },
 
-    created() {
-        const data = require("../data/skills.json");
+    async created() {
+        const { data } = await $axios.get('/categories/256');
         this.skills = data;
     }
 

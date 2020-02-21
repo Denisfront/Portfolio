@@ -1,14 +1,30 @@
 <template lang="pug">
     .btn-editing
         button.btn-editing.btn-editing--remove Править
-        button.btn-editing.btn-editing--change Удалить
+        button(
+            @click="removeExistedProject"
+            type="button"
+        ).btn-editing.btn-editing--change Удалить
+        
 
 </template>
 
 <script>
-    
+      import { mapActions} from 'vuex';
 export default {
-
+      props: {
+        project: {
+            type: Object,
+            default: () => {},
+            required: true
+        }      
+    },
+    methods: {
+        ...mapActions('projects', ['removeProject']),
+        async removeExistedProject() {           
+           await this.removeProject(this.project);
+        },
+    }
 }
 </script>
 

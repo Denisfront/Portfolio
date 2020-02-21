@@ -12,11 +12,12 @@
 </template>
 
 <script>
-
+  import appHeader from './components/header';
+  import pagination from './components/pagination';
   export default {
     components: {
-      appHeader: () => import('./components/header'),
-      pagination: () => import('./components/pagination'),
+      appHeader,
+      pagination
     }
   }
 
@@ -57,7 +58,6 @@
     background-image: url('~images/background/mountain_baloon.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
     flex: 1;
     padding-top: 60px;
 
