@@ -9,7 +9,7 @@
                                 v-model="title").categories-form__name
                     .buttons
                         button.approval-btn.approval-btn--tick
-                        button(type="button" @click="removeExistedCaregorirs").approval-btn.approval-btn--cross
+                        button(type="button").approval-btn.approval-btn--cross
                 skills-list(
                     :category="category"
                 )
@@ -50,11 +50,8 @@ export default {
                 })
         },
         async removeExistedCaregorirs() {
-            // await this.removeCaregorirs(this.category)
-           console.log(this.categories.id);
-           
-            
-        }
+            await this.removeCaregorirs(this.category)
+        }   
     }
 }
 </script>

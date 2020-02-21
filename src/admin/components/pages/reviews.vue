@@ -136,7 +136,6 @@ export default {
             if(!success) return;
 
             this.addReview(this.review);
-            this.review = '';
             this.validation.reset();
         })
     }

@@ -50,13 +50,13 @@ import skillItem from './skillItem'
             }
         },
         methods: {
-            ...mapActions('skills', ['addSkill']),
+            ...mapActions('skills',['addSkill']),
             async addNewSkill() {
                await this.addSkill(this.skill)
                 this.skill.title = '';
                 this.skill.percent = '';
-
-            }
+            },
+      
         }
     };
 </script>

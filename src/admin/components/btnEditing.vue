@@ -2,8 +2,8 @@
     .btn-editing
         button.btn-editing.btn-editing--remove Править
         button(
+            @click="removeExistedProject"
             type="button"
-            @click="removeExistedReview"
         ).btn-editing.btn-editing--change Удалить
         
 
@@ -12,18 +12,17 @@
 <script>
       import { mapActions} from 'vuex';
 export default {
-    props:{
-        review: {
+      props: {
+        project: {
             type: Object,
             default: () => {},
             required: true
-        }
+        }      
     },
-
     methods: {
-        ...mapActions('reviews', ['removeReview']),
-        async removeExistedReview() {
-           await this.removeReview(this.review);
+        ...mapActions('projects', ['removeProject']),
+        async removeExistedProject() {           
+           await this.removeProject(this.project);
         },
     }
 }

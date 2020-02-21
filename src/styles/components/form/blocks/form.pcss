@@ -14,7 +14,34 @@
         margin-bottom: 56px;
     }
 }
+ .tooltip-open {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(45, 60, 78, .9);
+    display: none;
+ }
 
+ .tooltip {
+    background-color: $white;
+    padding: 62px 103px;
+ }
+ .tooltip__text {
+    font-size: 36px;
+    font-weight: 600;
+    color: #414c63;
+    margin-bottom: 30px;
+ }
+ .tooltip__button {
+     &.btn {
+         text-align: center;
+     }
+ }
 .form {
     position: relative;
 }
@@ -164,8 +191,4 @@
         border-left-width: 20px;
         border-right-width: 20px;
     }
-}
-
-.displaying {
-    opacity: 1;
 }
