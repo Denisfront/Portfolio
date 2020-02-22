@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapState, mapGetters } from 'vuex';
 import { Validator } from 'simple-vue-validator';
 export default {
     mixin: [require('simple-vue-validator').mixin],
@@ -101,8 +101,13 @@ export default {
         pageTitle: () => import('../pageTitle') 
     },
     computed: {
+        
         ...mapState('reviews', {
             reviews: state => state.reviews
+        }),
+        
+        ...mapGetters({
+            review: 'reviews/selectedReview'
         })
     },
     methods: {
@@ -110,6 +115,7 @@ export default {
         nandleFile(e) {
             const file = e.target.files[0];
             this.review.photo = file;
+            
             this.renserImageFile(file);    
     },
     
@@ -127,8 +133,12 @@ export default {
     },
 
     editExistedReview(review) {
-        const fullReview = review;
-        console.log(fullReview);
+        this.review = {
+            photo: review.photo,
+            author:review.author,
+            occ: review.occ,
+            text: review.text,
+        }
     },
 
     send() {

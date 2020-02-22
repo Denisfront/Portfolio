@@ -9,19 +9,9 @@ export default {
         SET_PROJECT: (state, data) => (state.projects = data),
         ADD_PROJECT: (state, project) => state.projects.push(project),
         REMOVE_PROJECT: (state, deletedProject) => {
-            const removeProjectInReviews = projects => {
-                projects = projects.filter(
-                    projects => projects.id !== deletedProject.id
-                );
-            };
-
-            const findProject = projects => {
-                if(projects.id === deletedProject.projects) {
-                    removeProjectInReviews(projects);
-                }
-                return projects;
-            };
-            state.projects = state.projects.map(findProject)
+            state.projects = state.projects.filter(
+                element => element.id !== deletedProject.id
+            );
         },
     },                                                                                                                                                      
 

@@ -79,6 +79,7 @@
                         v-for="project in projects"
                         :key="project.id"
                         :project="project"
+                        @editExistedReview="editExistedReview"
                     )
    
 </template>
@@ -178,7 +179,15 @@ export default {
                 
                 this.project.techs = tag;
             }
+        },
+           editExistedReview(review) {
+            this.review = {
+                photo: review.photo,
+                author:review.author,
+                occ: review.occ,
+                text: review.text,
         }
+    },
     }
    
 }

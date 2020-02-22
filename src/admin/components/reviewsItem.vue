@@ -4,7 +4,8 @@
             .reviews-item__author
                 .reviews-item__author-avatar
                     .avatar.avatar--tiny
-                        img(:src="baseURL + pathToTheImage"
+                        img(
+                            :src="baseURL + pathToTheImage"
                         ).avatar__userpic
                 .reviews__author-desc
                     .reviews-item__author-username {{review.author}}
@@ -51,12 +52,13 @@
         methods: {
             ...mapActions('reviews', ['removeReviews', 'editReview']),
             async removeExistedReview() {
+          
                 await this.removeReviews(this.review)
                 .catch()
             },
-            async editExistedReview() {
-                this.$emit('editExistedReview', this.review);
-                await this.editReview(this.review)
+            editExistedReview() {
+            //   this.$store.dispatch('reviews/setSelectedReview', this.review)
+            this.$emit('editExistedReview', this.review)
             }
         }
 

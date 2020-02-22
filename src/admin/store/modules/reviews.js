@@ -2,27 +2,24 @@ export default {
     namespaced: true,
 
     state: {
-        reviews: []
+        reviews: [],
+        selectedReview: {
+            photo: {},
+            author: 'lkjk',
+            occ: '',
+            text: ''
+        }
     },
 
     mutations: {
         SET_REVIEWS: (state, data) => (state.reviews = data),
         ADD_REVIEWS: (state, review) => state.reviews.push(review),
         REMOVE_REVIEW: (state, deletedReview) => {
-            const removeReviewInReviews = reviews => {
-                reviews = reviews.filter(
-                    reviews => reviews.id !== deletedReview.id
-                );
-            };
-
-            const findReview = reviews => {
-                if(reviews.id === deletedReview.reviews) {
-                    removeReviewInReviews(reviews);
-                }
-                return reviews;
-            };
-            state.reviews = state.reviews.map(findReview)
+            state.reviews = state.reviews.filter(
+                element => element.id !== deletedReview.id
+            );
         },
+        SET_SELECTED_REVIEW: (state, review) => (state.selectedReview = review),
     },
 
     actions: {
@@ -65,6 +62,9 @@ export default {
             commit("REMOVE_REVIEW", data.review);                      
        },
       
+    },
+    getters: {
+        selectedReview: state => state.selectedReview
     }
 
 }
